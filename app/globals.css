@@ -17,6 +17,8 @@
   --color-sakura-ink: #1f1814;
   --color-sakura-paper: #f7f3ed;
   --color-sakura-stone: #7d786f;
+  --color-goal-mist: #f5f5f5;
+  --color-goal-forest: #2d5038;
   --font-sans: var(--font-instrument-sans);
   --font-display: var(--font-sansita);
   --font-mono: var(--font-geist-mono);
@@ -34,4 +36,65 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-instrument-sans), Arial, Helvetica, sans-serif;
+}
+
+.sakura-petals-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -10vh;
+  display: block;
+  border-radius: 50% 50% 50% 0;
+  opacity: 0;
+  box-shadow: 0 0 6px rgba(245, 220, 224, 0.12);
+  will-change: transform, opacity;
+  animation-name: sakura-fall;
+  animation-timing-function: cubic-bezier(0.42, 0.02, 0.58, 0.98);
+  animation-iteration-count: infinite;
+}
+
+.sakura-petal--pink {
+  background-color: #f8dde1;
+}
+
+.sakura-petal--cream {
+  background-color: #f5ebe0;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--sakura-opacity, 0.28);
+  }
+  35% {
+    transform: translate3d(calc(var(--sakura-drift, 24px) * 0.35), 38vh, 0)
+      rotate(calc(var(--sakura-rotate-end, 200deg) * 0.35));
+  }
+  65% {
+    transform: translate3d(calc(var(--sakura-drift, 24px) * -0.25), 72vh, 0)
+      rotate(calc(var(--sakura-rotate-end, 200deg) * 0.65));
+  }
+  88% {
+    opacity: var(--sakura-opacity, 0.28);
+  }
+  100% {
+    transform: translate3d(var(--sakura-drift, 24px), 110vh, 0)
+      rotate(var(--sakura-rotate-end, 200deg));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petals-layer {
+    display: none;
+  }
 }

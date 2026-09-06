@@ -14,6 +14,7 @@ const projects: Project[] = [
     discipline: "AI Product Design / Agentic UX / Web App",
     description:
       "An AI-powered goal achievement platform that turns long-term goals into adaptive mountain journeys.",
+    href: "/projects/goal-mountain",
   },
   {
     title: "Sakura Matcha",

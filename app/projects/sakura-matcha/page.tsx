@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CaseStudyShot } from "@/components/CaseStudyShot";
+import { SakuraPetals } from "@/components/SakuraPetals";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
@@ -115,6 +116,8 @@ function Exhibit({
 export default function SakuraMatchaPage() {
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-sakura-ink pb-[120px] pt-8 text-[17px] leading-normal text-white sm:text-[20px] lg:pt-figma-header-top">
+      <SakuraPetals />
+
       <Container>
         <SiteHeader tone="light" />
       </Container>
@@ -122,7 +125,7 @@ export default function SakuraMatchaPage() {
       {/* Hero */}
       <section className="relative mt-12 w-full overflow-hidden lg:mt-20 lg:h-[708px]">
         <Image
-          src={`${shots}/hero.png`}
+          src="/figma-assets/hero-backdrop.png"
           alt=""
           fill
           priority

@@ -8,11 +8,17 @@ type CaseStudyShotProps = {
   height: number;
   /** Sizing + aspect classes for the frame, e.g. "w-full max-w-[515px] aspect-[515/299]". */
   className: string;
-  /** Frame border: black inside the light panels, white on the dark background. */
-  frame?: "dark" | "light";
+  /** Frame border: black inside the light panels, white on the dark background, or none. */
+  frame?: "dark" | "light" | "none";
   /** Which edge of a tall screenshot stays visible when the frame crops it. */
   align?: "top" | "center" | "bottom";
   sizes?: string;
+};
+
+const frames = {
+  dark: "rounded-figma-shot border border-black",
+  light: "rounded-figma-shot border border-white",
+  none: "",
 };
 
 const alignment = {
@@ -33,9 +39,7 @@ export function CaseStudyShot({
 }: CaseStudyShotProps) {
   return (
     <div
-      className={`overflow-hidden rounded-figma-shot border ${
-        frame === "dark" ? "border-black" : "border-white"
-      } ${className}`}
+      className={`overflow-hidden ${frames[frame]} ${className}`}
     >
       <Image
         src={src}
