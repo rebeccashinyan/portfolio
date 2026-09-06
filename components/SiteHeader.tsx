@@ -4,10 +4,13 @@ import Link from "next/link";
 import { brandName, logo, navItems, socialLinks } from "@/components/siteConfig";
 
 type SiteHeaderProps = {
-  activeHref: string;
+  /** Nav item to mark as the current page. Omit on pages that are not in the nav. */
+  activeHref?: string;
+  /** Brand wordmark color: dark on the light pages, light on the dark case-study pages. */
+  tone?: "dark" | "light";
 };
 
-export function SiteHeader({ activeHref }: SiteHeaderProps) {
+export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
   return (
     <header className="relative mx-auto flex w-[calc(100vw-40px)] max-w-figma-content flex-col items-start gap-4 sm:w-full sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-5 lg:flex-nowrap">
       <Link href="/" className="flex items-center gap-[19px]">
@@ -19,7 +22,11 @@ export function SiteHeader({ activeHref }: SiteHeaderProps) {
           priority
           className="h-[69px] w-[72px]"
         />
-        <span className="font-display text-[25px] font-normal leading-none">
+        <span
+          className={`font-display text-[25px] font-normal leading-none ${
+            tone === "light" ? "text-white" : "text-black"
+          }`}
+        >
           {brandName}
         </span>
       </Link>

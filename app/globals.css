@@ -14,10 +14,14 @@
   --color-portfolio-periwinkle: #93b2f8;
   --color-portfolio-placeholder: #d9d9d9;
   --color-portfolio-gold: #f1b943;
+  --color-sakura-ink: #1f1814;
+  --color-sakura-paper: #f7f3ed;
+  --color-sakura-stone: #7d786f;
   --font-sans: var(--font-instrument-sans);
   --font-display: var(--font-sansita);
   --font-mono: var(--font-geist-mono);
   --radius-figma-sm: 5px;
+  --radius-figma-shot: 10px;
   --radius-figma-panel: 30px;
   --radius-figma-pill: 50px;
   --spacing-figma-artboard: 1440px;
