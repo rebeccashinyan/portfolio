@@ -41,7 +41,10 @@ body {
 .sakura-petals-layer {
   position: fixed;
   inset: 0;
-  z-index: 1;
+  /* Sits above the page background but below all content, so petals never
+     cover text or imagery. Requires an `isolate` stacking context on the
+     scrolling container. */
+  z-index: -1;
   overflow: hidden;
   pointer-events: none;
 }
