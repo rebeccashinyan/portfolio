@@ -12,6 +12,8 @@
   --color-portfolio-paper: #fcfdff;
   --color-portfolio-navy: #0a1680;
   --color-portfolio-periwinkle: #93b2f8;
+  --color-portfolio-placeholder: #d9d9d9;
+  --color-portfolio-gold: #f1b943;
   --font-sans: var(--font-instrument-sans);
   --font-display: var(--font-sansita);
   --font-mono: var(--font-geist-mono);
