@@ -173,57 +173,63 @@ export default function GoalMountainPage() {
       </Container>
 
       {/* Hero */}
-      <section className="relative mt-12 w-full overflow-hidden lg:mt-20 lg:h-[708px]">
-        <Image
-          src="/figma-assets/hero-backdrop.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-top"
-        />
-        <div className="relative mx-auto h-full w-full max-w-figma-artboard px-5 py-16 text-white sm:px-8 lg:px-0 lg:py-0">
-          <div className="lg:absolute lg:left-[120px] lg:top-[293px] lg:w-[775px]">
-            <p className="text-[16px] leading-normal sm:text-[18px]">
-              GOAL MOUNTAIN · AI PRODUCT DESIGN / AGENTIC UX / WEB APP
-            </p>
-            <h1 className="mt-5 font-normal text-[44px] leading-tight sm:text-[70px] sm:leading-none">
+      <section className="relative mt-9 w-full overflow-hidden bg-goal-pine">
+        <div className="relative mx-auto flex min-h-[440px] w-full max-w-figma-artboard flex-col justify-end overflow-hidden px-5 pb-14 pt-[220px] text-white sm:px-8 lg:block lg:h-[758px] lg:px-0 lg:py-0">
+          <Image
+            src={`${shots}/hero-mountain.svg`}
+            alt=""
+            width={772}
+            height={516}
+            priority
+            className="pointer-events-none absolute bottom-0 left-[-150px] w-[620px] max-w-none sm:left-[-190px] sm:w-[720px] lg:bottom-auto lg:left-[-218px] lg:top-[186px] lg:h-[515px] lg:w-[771px]"
+          />
+
+          <div className="relative lg:absolute lg:left-[120px] lg:top-[463px] lg:w-[775px]">
+            <h1 className="font-display text-[44px] font-normal leading-normal sm:text-[70px]">
               Goal Mountain
             </h1>
-            <p className="mt-8 max-w-[609px] text-[16px] leading-normal sm:text-[18px]">
-              An AI-powered goal achievement platform that turns long-term goals
-              into adaptive mountain journeys.
+            <p className="max-w-[773px] text-[19px] leading-normal sm:text-[25px]">
+              An AI goal companion that turns long-term ambitions into adaptive,
+              actionable plans.
             </p>
           </div>
 
           <div className="hidden lg:block">
             <CaseStudyShot
-              src={`${shots}/mvp-insights.png`}
-              alt="The Goal Mountain insights view"
-              width={940}
-              height={1314}
-              frame="light"
-              align="top"
-              sizes="273px"
-              className="absolute left-[968px] top-[13px] h-[449px] w-[273px]"
+              src={`${shots}/mvp-intake-1.png`}
+              alt="Starting a new mountain from a plain-language goal"
+              width={2880}
+              height={1622}
+              frame="none"
+              sizes="428px"
+              className="absolute left-[734px] top-[93px] h-[241px] w-[428px] rounded-figma-shot"
             />
             <CaseStudyShot
-              src={`${shots}/mvp-progress.png`}
-              alt="A weekly plan with daily progress signals"
-              width={2294}
-              height={1232}
-              frame="light"
-              sizes="282px"
-              className="absolute left-[1100px] top-[354px] h-[143px] w-[282px]"
+              src={`${shots}/hero-mountains-grid.png`}
+              alt="An overview of several goal mountains in progress"
+              width={2108}
+              height={1588}
+              frame="none"
+              sizes="221px"
+              className="absolute left-[1188px] top-[168px] h-[166px] w-[221px] rounded-figma-shot"
             />
             <CaseStudyShot
-              src={`${shots}/mvp-draft.png`}
-              alt="A weekly plan in its draft state"
-              width={2138}
-              height={974}
-              frame="light"
-              sizes="282px"
-              className="absolute left-[1100px] top-[513px] h-[185px] w-[282px]"
+              src={`${shots}/mvp-mountain.png`}
+              alt="A mountain route with milestones leading to the summit"
+              width={2880}
+              height={1504}
+              frame="none"
+              sizes="212px"
+              className="absolute left-[792px] top-[360px] h-[161px] w-[212px] rounded-figma-shot"
+            />
+            <CaseStudyShot
+              src={`${shots}/hero-first-week.png`}
+              alt="The first weekly plan generated for a mountain"
+              width={2028}
+              height={1474}
+              frame="none"
+              sizes="383px"
+              className="absolute left-[1028px] top-[360px] h-[278px] w-[383px] rounded-figma-shot"
             />
           </div>
         </div>
@@ -289,7 +295,9 @@ export default function GoalMountainPage() {
       {/* 03 — Research & Product Opportunity */}
       <section className="mt-[120px] lg:mt-[140px]">
         <Container>
-          <SectionHeading>03 - Research &amp; Product Opportunity</SectionHeading>
+          <SectionHeading>
+            03 - Research &amp; Product Opportunity
+          </SectionHeading>
 
           <div className="mt-[70px]">
             <DisplayHeading>Secondary Research</DisplayHeading>
@@ -406,46 +414,48 @@ export default function GoalMountainPage() {
             memory to adapt future guidance.
           </p>
 
-          <div className="mt-[70px] flex flex-col gap-8 lg:relative lg:mx-auto lg:h-[1048px] lg:w-[736px] lg:gap-0">
-            <CaseStudyShot
-              src={`${shots}/concept-1.png`}
-              alt="Early wireframe of a mountain route with milestones"
-              width={878}
-              height={1182}
-              frame="none"
-              sizes="(max-width: 1024px) 92vw, 263px"
-              className="aspect-[263/354] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-0 lg:h-[354px] lg:w-[263px] lg:max-w-none"
-            />
-            <CaseStudyShot
-              src={`${shots}/concept-2.png`}
-              alt="Early wireframe of the all-mountains overview"
-              width={876}
-              height={728}
-              frame="none"
-              sizes="(max-width: 1024px) 92vw, 438px"
-              className="aspect-[438/364] w-full max-w-[438px] lg:absolute lg:left-0 lg:top-[201px] lg:h-[364px] lg:w-[438px] lg:max-w-none"
-            />
-            <CaseStudyShot
-              src={`${shots}/concept-3.png`}
-              alt="Early wireframe of the conversational intake"
-              width={872}
-              height={702}
-              frame="none"
-              sizes="(max-width: 1024px) 92vw, 263px"
-              className="aspect-[263/212] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[383px] lg:h-[212px] lg:w-[263px] lg:max-w-none"
-            />
-            <CaseStudyShot
-              src={`${shots}/concept-4.png`}
-              alt="Early wireframe of the weekly plan and insights"
-              width={872}
-              height={1446}
-              frame="none"
-              sizes="(max-width: 1024px) 92vw, 263px"
-              className="aspect-[263/437] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[611px] lg:h-[437px] lg:w-[263px] lg:max-w-none"
-            />
-          </div>
+          <Panel>
+            <div className="flex flex-col gap-8 lg:relative lg:mx-auto lg:h-[1048px] lg:w-[736px] lg:gap-0">
+              <CaseStudyShot
+                src={`${shots}/concept-1.png`}
+                alt="Early wireframe of a mountain route with milestones"
+                width={878}
+                height={1182}
+                frame="none"
+                sizes="(max-width: 1024px) 92vw, 263px"
+                className="aspect-[263/354] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-0 lg:h-[354px] lg:w-[263px] lg:max-w-none"
+              />
+              <CaseStudyShot
+                src={`${shots}/concept-2.png`}
+                alt="Early wireframe of the all-mountains overview"
+                width={876}
+                height={728}
+                frame="none"
+                sizes="(max-width: 1024px) 92vw, 438px"
+                className="aspect-[438/364] w-full max-w-[438px] lg:absolute lg:left-0 lg:top-[201px] lg:h-[364px] lg:w-[438px] lg:max-w-none"
+              />
+              <CaseStudyShot
+                src={`${shots}/concept-3.png`}
+                alt="Early wireframe of the conversational intake"
+                width={872}
+                height={702}
+                frame="none"
+                sizes="(max-width: 1024px) 92vw, 263px"
+                className="aspect-[263/212] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[383px] lg:h-[212px] lg:w-[263px] lg:max-w-none"
+              />
+              <CaseStudyShot
+                src={`${shots}/concept-4.png`}
+                alt="Early wireframe of the weekly plan and insights"
+                width={872}
+                height={1446}
+                frame="none"
+                sizes="(max-width: 1024px) 92vw, 263px"
+                className="aspect-[263/437] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[611px] lg:h-[437px] lg:w-[263px] lg:max-w-none"
+              />
+            </div>
+          </Panel>
 
-          <p className="mt-[70px]">
+          <p className="mt-10">
             At this stage, the core product model worked conceptually. The
             harder Human–AI interaction problems only became visible once I
             implemented and started using the flow.
