@@ -1,3 +1,5 @@
+import type { SocialIconName } from "@/components/SocialIcon";
+
 export const brandName = "Rebecca Wang";
 
 export const logo = {
@@ -11,40 +13,24 @@ export const navItems = [
   { label: "Projects", href: "/projects" },
 ];
 
-export const socialLinks = [
+export const socialLinks: {
+  label: string;
+  href: string;
+  icon: SocialIconName;
+}[] = [
   {
     label: "LinkedIn profile",
     href: "https://www.linkedin.com/",
-    icon: {
-      src: "/figma-assets/social-linkedin.png",
-      width: 450,
-      height: 450,
-    },
+    icon: "linkedin",
   },
   {
     label: "Email Rebecca",
     href: "mailto:sw6543@nyu.edu",
-    icon: {
-      src: "/figma-assets/social-mail.png",
-      width: 1024,
-      height: 1024,
-    },
-    iconClassName: "absolute left-0.5 top-[3px] size-10 rounded-figma-sm",
-    underlay: {
-      src: "/figma-assets/mail-ellipse.svg",
-      width: 26,
-      height: 24,
-      className: "absolute left-[9px] top-3 h-6 w-[26px]",
-    },
-    className: "bg-black",
+    icon: "mail",
   },
   {
     label: "GitHub profile",
     href: "https://github.com/",
-    icon: {
-      src: "/figma-assets/social-github.png",
-      width: 512,
-      height: 512,
-    },
+    icon: "github",
   },
 ];

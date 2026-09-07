@@ -599,10 +599,11 @@ export default function SakuraMatchaPage() {
 
           <CaseStudyVideo
             src={`${shots}/mvp-demo.mp4`}
+            poster={`${shots}/mvp-demo-poster.jpg`}
             label="Screen recording walking through the Sakura Matcha MVP"
             frame="none"
             radius="panel"
-            className="mt-[30px] h-[280px] w-full lg:h-[590px]"
+            className="mt-[30px] aspect-[1440/812] w-full"
           />
 
           <div className="mt-[50px]">

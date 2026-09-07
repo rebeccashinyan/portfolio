@@ -11,8 +11,6 @@ type CaseStudyVideoProps = {
   frame?: "dark" | "light" | "none";
   /** Corner radius: screenshot-sized or full panel. */
   radius?: "shot" | "panel";
-  /** "contain" letterboxes the recording, "cover" fills the frame and crops it. */
-  fit?: "contain" | "cover";
 };
 
 const frames = {
@@ -33,7 +31,6 @@ export function CaseStudyVideo({
   className,
   frame = "light",
   radius = "shot",
-  fit = "contain",
 }: CaseStudyVideoProps) {
   return (
     <div
@@ -46,7 +43,7 @@ export function CaseStudyVideo({
         controls
         playsInline
         preload="metadata"
-        className={`size-full ${fit === "cover" ? "object-cover" : "object-contain"}`}
+        className="size-full object-contain"
       />
     </div>
   );

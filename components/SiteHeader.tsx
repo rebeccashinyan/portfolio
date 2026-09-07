@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteNav } from "@/components/SiteNav";
+import { SocialIcon } from "@/components/SocialIcon";
 import { brandName, logo, socialLinks } from "@/components/siteConfig";
 
 type SiteHeaderProps = {
@@ -40,24 +41,13 @@ export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
             key={link.label}
             href={link.href}
             aria-label={link.label}
-            className={`relative size-[43px] overflow-hidden rounded-figma-sm ${link.className ?? ""}`}
+            className={`flex size-[43px] items-center justify-center rounded-figma-sm bg-black text-white focus-visible:outline-2 focus-visible:outline-offset-4 ${
+              tone === "light"
+                ? "focus-visible:outline-white"
+                : "focus-visible:outline-portfolio-navy"
+            }`}
           >
-            {link.underlay ? (
-              <Image
-                src={link.underlay.src}
-                alt=""
-                width={link.underlay.width}
-                height={link.underlay.height}
-                className={link.underlay.className}
-              />
-            ) : null}
-            <Image
-              src={link.icon.src}
-              alt=""
-              width={link.icon.width}
-              height={link.icon.height}
-              className={link.iconClassName ?? "size-full object-cover"}
-            />
+            <SocialIcon name={link.icon} />
           </a>
         ))}
       </div>
