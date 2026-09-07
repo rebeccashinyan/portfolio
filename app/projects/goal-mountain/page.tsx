@@ -174,7 +174,10 @@ export default function GoalMountainPage() {
 
       {/* Hero */}
       <section className="relative mt-9 w-full overflow-hidden bg-goal-pine">
-        <div className="relative mx-auto flex min-h-[440px] w-full max-w-figma-artboard flex-col justify-end overflow-hidden px-5 pb-14 pt-[220px] text-white sm:px-8 lg:block lg:h-[758px] lg:px-0 lg:py-0">
+        {/* The band is full-bleed and does the clipping, so the artwork below
+            can hang past this 1440px column and run off the edge of the screen
+            instead of being cut at the column's own boundary. */}
+        <div className="relative mx-auto flex min-h-[440px] w-full max-w-figma-artboard flex-col justify-end px-5 pb-14 pt-[220px] text-white sm:px-8 lg:block lg:h-[758px] lg:px-0 lg:py-0">
           <Image
             src={`${shots}/hero-mountain.svg`}
             alt=""
