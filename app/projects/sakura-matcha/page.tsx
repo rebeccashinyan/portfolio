@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CaseStudyShot } from "@/components/CaseStudyShot";
+import { CaseStudyVideo } from "@/components/CaseStudyVideo";
 import { SakuraPetals } from "@/components/SakuraPetals";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -596,9 +597,12 @@ export default function SakuraMatchaPage() {
             turn to Ask Sakura when they need additional guidance.
           </p>
 
-          <div
-            aria-hidden
-            className="mt-[30px] h-[280px] rounded-figma-panel bg-sakura-stone lg:h-[590px]"
+          <CaseStudyVideo
+            src={`${shots}/mvp-demo.mp4`}
+            label="Screen recording walking through the Sakura Matcha MVP"
+            frame="none"
+            radius="panel"
+            className="mt-[30px] h-[280px] w-full lg:h-[590px]"
           />
 
           <div className="mt-[50px]">

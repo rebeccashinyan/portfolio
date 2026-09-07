@@ -23,6 +23,7 @@
   --font-sans: var(--font-instrument-sans);
   --font-display: var(--font-sansita);
   --font-mono: var(--font-geist-mono);
+  --ease-nav-pill: cubic-bezier(0.34, 1.28, 0.5, 1);
   --radius-figma-sm: 5px;
   --radius-figma-shot: 10px;
   --radius-figma-panel: 30px;

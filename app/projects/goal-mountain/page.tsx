@@ -142,6 +142,60 @@ function DownArrow() {
   );
 }
 
+/**
+ * The MVP loop diagram is a free-form Figma canvas rather than a stacked
+ * layout, so on large screens its parts sit at absolute coordinates inside a
+ * 1200x1854 box; below that each step collapses to a normal vertical sequence.
+ */
+function LoopCaption({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className: string;
+}) {
+  return (
+    <p
+      className={`mt-5 font-bold lg:absolute lg:mt-0 lg:whitespace-nowrap ${className}`}
+    >
+      {children}
+    </p>
+  );
+}
+
+/** Red callout drawn over a screenshot, sized in percentages so it tracks the
+    image at every breakpoint. */
+function LoopHighlight({ className }: { className: string }) {
+  return (
+    <span
+      aria-hidden
+      className={`absolute border-[3px] border-solid border-[red] ${className}`}
+    />
+  );
+}
+
+function LoopArrow({
+  src,
+  width,
+  height,
+  className,
+}: {
+  src: string;
+  width: number;
+  height: number;
+  className: string;
+}) {
+  return (
+    <Image
+      src={`${shots}/${src}`}
+      alt=""
+      width={width}
+      height={height}
+      className={`absolute hidden lg:block ${className}`}
+    />
+  );
+}
+
 function Stage({
   label,
   title,
@@ -702,10 +756,175 @@ export default function GoalMountainPage() {
             <p>Understand → Plan → Act → Learn → Adapt</p>
           </div>
 
-          <div
-            aria-hidden
-            className="mt-10 h-[240px] rounded-figma-panel bg-portfolio-placeholder lg:h-[450px]"
-          />
+          <div className="mt-10 rounded-figma-panel bg-white px-5 py-10 text-[18px] leading-normal sm:px-10 sm:text-[20px] lg:h-[1854px] lg:overflow-hidden lg:px-0 lg:py-0">
+            <ol className="flex list-none flex-col gap-14 lg:relative lg:h-full lg:gap-0">
+              <li className="lg:absolute lg:inset-0">
+                <CaseStudyShot
+                  src={`${shots}/mvp-loop-intake.png`}
+                  alt="A conversational intake collecting the goal and its constraints"
+                  width={992}
+                  height={1012}
+                  frame="none"
+                  sizes="(max-width: 1024px) 92vw, 330px"
+                  className="aspect-[330/337] w-full max-w-[330px] lg:absolute lg:left-[80px] lg:top-[83px] lg:h-[337px] lg:w-[330px] lg:max-w-none"
+                />
+                <LoopCaption className="lg:left-[55px] lg:top-[447px]">
+                  1. Build enough context to shape the route
+                </LoopCaption>
+              </li>
+
+              <LoopArrow
+                src="loop-arrow-right.svg"
+                width={92}
+                height={59}
+                className="lg:left-[522px] lg:top-[223px]"
+              />
+
+              <li className="lg:absolute lg:inset-0">
+                <div className="flex flex-col gap-4 lg:block">
+                  <CaseStudyShot
+                    src={`${shots}/mvp-mountain.png`}
+                    alt="A mountain route with milestones leading to the summit"
+                    width={2880}
+                    height={1504}
+                    frame="none"
+                    sizes="(max-width: 1024px) 92vw, 292px"
+                    className="aspect-[292/222] w-full max-w-[400px] lg:absolute lg:left-[701px] lg:top-[83px] lg:h-[222px] lg:w-[292px] lg:max-w-none"
+                  />
+                  <CaseStudyShot
+                    src={`${shots}/hero-first-week.png`}
+                    alt="The first weekly plan generated from that route"
+                    width={2028}
+                    height={1474}
+                    frame="none"
+                    sizes="(max-width: 1024px) 92vw, 292px"
+                    className="aspect-[292/212] w-full max-w-[400px] lg:absolute lg:left-[701px] lg:top-[314px] lg:h-[212px] lg:w-[292px] lg:max-w-none"
+                  />
+                </div>
+                <LoopCaption className="lg:left-[653px] lg:top-[553px]">
+                  2. Turn the goal into a route and actionable week
+                </LoopCaption>
+              </li>
+
+              <LoopArrow
+                src="loop-arrow-diag.svg"
+                width={61}
+                height={83}
+                className="lg:left-[746px] lg:top-[620px]"
+              />
+
+              <li className="lg:absolute lg:inset-0">
+                <div className="flex flex-col gap-4 lg:block">
+                  <div className="relative w-full max-w-[120px] lg:absolute lg:left-[245px] lg:top-[704px] lg:h-[350px] lg:w-[61px] lg:max-w-none">
+                    <CaseStudyShot
+                      src={`${shots}/mvp-loop-day.png`}
+                      alt="A single day in the weekly plan with its check-in controls"
+                      width={258}
+                      height={1486}
+                      frame="none"
+                      sizes="(max-width: 1024px) 120px, 61px"
+                      className="aspect-[61/350] w-full lg:aspect-auto lg:size-full"
+                    />
+                    <LoopHighlight className="left-[6.557%] top-[33.143%] h-[14.857%] w-[85.246%]" />
+                    <LoopHighlight className="left-[8.197%] top-[81.143%] h-[17.714%] w-[83.607%]" />
+                  </div>
+                  <div className="relative w-full max-w-[580px] lg:absolute lg:left-[337px] lg:top-[723px] lg:h-[327px] lg:w-[580px] lg:max-w-none">
+                    <CaseStudyShot
+                      src={`${shots}/mvp-loop-week.png`}
+                      alt="The active weekly plan alongside the AI Guide"
+                      width={2880}
+                      height={1624}
+                      frame="none"
+                      sizes="(max-width: 1024px) 92vw, 580px"
+                      className="aspect-[580/327] w-full lg:aspect-auto lg:size-full"
+                    />
+                    <LoopHighlight className="left-[18.621%] top-[-2.446%] h-[7.645%] w-[25.862%]" />
+                    <LoopHighlight className="left-[80.69%] top-[69.113%] h-[22.324%] w-[16.724%]" />
+                  </div>
+                </div>
+                <LoopArrow
+                  src="loop-arrow-back.svg"
+                  width={145}
+                  height={47}
+                  className="lg:left-[305px] lg:top-[794px]"
+                />
+                <LoopCaption className="lg:left-[417px] lg:top-[1086px]">
+                  3. Take action, check in, and steer
+                </LoopCaption>
+              </li>
+
+              <LoopArrow
+                src="loop-arrow-diag.svg"
+                width={61}
+                height={83}
+                className="lg:left-[302px] lg:top-[1136px]"
+              />
+
+              <li className="lg:absolute lg:inset-0">
+                <div className="flex flex-col gap-8 lg:block">
+                  <div>
+                    <p className="font-bold lg:absolute lg:left-[103px] lg:top-[1271px] lg:whitespace-nowrap">
+                      FOR THE USER
+                    </p>
+                    <CaseStudyShot
+                      src={`${shots}/mvp-loop-insights.png`}
+                      alt="The Insights view summarising the user's week"
+                      width={1102}
+                      height={1530}
+                      frame="none"
+                      sizes="(max-width: 1024px) 92vw, 238px"
+                      className="mt-2 aspect-[238/331] w-full max-w-[320px] lg:absolute lg:left-[55px] lg:top-[1305px] lg:mt-0 lg:h-[331px] lg:w-[238px] lg:max-w-none"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold lg:absolute lg:left-[372px] lg:top-[1271px] lg:whitespace-nowrap">
+                      FOR THE SYSTEM
+                    </p>
+                    <div className="relative mt-2 w-full max-w-[380px] lg:absolute lg:left-[325px] lg:top-[1302px] lg:mt-0 lg:h-[335px] lg:w-[287px] lg:max-w-none">
+                      <CaseStudyShot
+                        src={`${shots}/mvp-loop-memory.png`}
+                        alt="The memory profile the system keeps about the user"
+                        width={1290}
+                        height={1504}
+                        frame="none"
+                        sizes="(max-width: 1024px) 92vw, 287px"
+                        className="aspect-[287/335] w-full lg:aspect-auto lg:size-full"
+                      />
+                      <LoopHighlight className="left-[1.742%] top-[83.582%] h-[14.627%] w-[96.167%]" />
+                    </div>
+                  </div>
+                </div>
+                <LoopCaption className="lg:left-[156px] lg:top-[1667px]">
+                  4. Turn progress into insights and memory
+                </LoopCaption>
+              </li>
+
+              <LoopArrow
+                src="loop-arrow-right.svg"
+                width={92}
+                height={59}
+                className="lg:left-[659px] lg:top-[1447px]"
+              />
+
+              <li className="lg:absolute lg:inset-0">
+                <div className="relative w-full max-w-[420px] lg:absolute lg:left-[786px] lg:top-[1318px] lg:h-[315px] lg:w-[330px] lg:max-w-none">
+                  <CaseStudyShot
+                    src={`${shots}/mvp-loop-next-week.png`}
+                    alt="The next weekly draft showing what changed from last week"
+                    width={1682}
+                    height={1606}
+                    frame="none"
+                    sizes="(max-width: 1024px) 92vw, 330px"
+                    className="aspect-[330/315] w-full lg:aspect-auto lg:size-full"
+                  />
+                  <LoopHighlight className="left-[5.758%] top-[7.937%] h-[14.603%] w-[89.697%]" />
+                </div>
+                <LoopCaption className="lg:left-[731px] lg:top-[1657px]">
+                  5. Use that context to shape what comes next
+                </LoopCaption>
+              </li>
+            </ol>
+          </div>
 
           <ol className="mt-[100px] list-decimal space-y-[100px] pl-7 lg:pl-[45px]">
             <li>
