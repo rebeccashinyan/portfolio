@@ -49,6 +49,14 @@ const problems = [
   },
 ];
 
+/**
+ * Numbered lists whose items open with a StepHeading. The ::marker inherits the
+ * list item's font size, which is body copy, so it has to be set to the heading
+ * size explicitly or the numeral renders smaller than the heading beside it.
+ */
+const stepList =
+  "list-decimal pl-7 marker:text-[24px] sm:marker:text-[30px] lg:pl-[45px]";
+
 const principleRows = [
   ["Make progress concrete", "Mountain → Milestones → Summit"],
   ["Adapt from feedback", "Weekly Plan + Progress Tracking + Insights"],
@@ -337,7 +345,7 @@ export default function GoalMountainPage() {
           <SectionHeading>02 - The Problem</SectionHeading>
           <div className="mt-[70px] lg:w-[852px]">
             <p>There are three challenges I work on for Goal Mountain:</p>
-            <ol className="mt-8 list-decimal space-y-8 pl-7 lg:pl-[45px]">
+            <ol className={`mt-8 space-y-8 ${stepList}`}>
               {problems.map((problem) => (
                 <li key={problem.title}>
                   <StepHeading>{problem.title}</StepHeading>
@@ -359,7 +367,7 @@ export default function GoalMountainPage() {
           <div className="mt-[70px]">
             <DisplayHeading>Secondary Research</DisplayHeading>
             <Panel>
-              <ol className="list-decimal space-y-[70px] pl-7 lg:pl-[45px]">
+              <ol className={`space-y-[70px] ${stepList}`}>
                 <li>
                   <StepHeading>
                     Long-term goals become more actionable when progress is made
@@ -539,7 +547,7 @@ export default function GoalMountainPage() {
             </p>
           </div>
 
-          <ol className="mt-[70px] list-decimal space-y-[100px] pl-7 lg:pl-[45px]">
+          <ol className={`mt-[70px] space-y-[100px] ${stepList}`}>
             <li>
               <StepHeading>
                 Make the route useful without over-interviewing the user
@@ -926,7 +934,7 @@ export default function GoalMountainPage() {
             </ol>
           </div>
 
-          <ol className="mt-[100px] list-decimal space-y-[100px] pl-7 lg:pl-[45px]">
+          <ol className={`mt-[100px] space-y-[100px] ${stepList}`}>
             <li>
               <StepHeading>Turn an ambition into a route</StepHeading>
               <div className="mt-6">
