@@ -132,7 +132,7 @@ export function SiteNav({ activeHref }: SiteNavProps) {
     <nav
       ref={navRef}
       aria-label="Main navigation"
-      className="relative order-3 mx-auto flex h-[69px] w-[236px] items-center rounded-figma-pill bg-portfolio-paper p-[14px] text-[18px] sm:order-none sm:mt-0 lg:absolute lg:left-1/2 lg:top-0 lg:-translate-x-1/2"
+      className="relative order-3 mx-auto flex h-[62px] w-[212px] items-center rounded-figma-pill bg-portfolio-paper p-[12px] text-[16px] sm:order-none sm:mt-0 lg:absolute lg:left-1/2 lg:top-0 lg:-translate-x-1/2"
     >
       {layout && pill && firstBox && lastBox ? (
         <span
@@ -186,7 +186,7 @@ export function SiteNav({ activeHref }: SiteNavProps) {
               itemRefs.current[index] = el;
             }}
             aria-current={isActive ? "page" : undefined}
-            className={`relative flex h-[41px] flex-1 items-center justify-center rounded-figma-pill transition-[background-color,scale] duration-150 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-navy motion-reduce:transition-none ${
+            className={`relative flex h-[38px] flex-1 items-center justify-center rounded-figma-pill transition-[background-color,scale] duration-150 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-navy motion-reduce:transition-none ${
               isActive
                 ? ""
                 : "hover:bg-portfolio-navy/[0.06] active:scale-[0.96]"

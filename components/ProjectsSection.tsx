@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Project = {
@@ -6,7 +7,12 @@ type Project = {
   description: string;
   /** Case-study page, when one exists. */
   href?: string;
+  /** Cover image; projects without one show the gold placeholder. */
+  cover?: { src: string; alt: string; width: number; height: number };
 };
+
+const coverFrame =
+  "h-[260px] w-full shrink-0 rounded-figma-panel sm:w-[232px] lg:h-[272px]";
 
 const projects: Project[] = [
   {
@@ -15,6 +21,12 @@ const projects: Project[] = [
     description:
       "An AI-powered goal achievement platform that turns long-term goals into adaptive mountain journeys.",
     href: "/projects/goal-mountain",
+    cover: {
+      src: "/figma-assets/goal-mountain/cover.png",
+      alt: "Goal Mountain web app on a laptop, showing a goal path up a mountain",
+      width: 1024,
+      height: 1536,
+    },
   },
   {
     title: "Sakura Matcha",
@@ -28,22 +40,34 @@ const projects: Project[] = [
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article
-      className={`flex min-h-[380px] flex-col rounded-figma-panel border border-black bg-white px-5 py-6 sm:px-8 lg:h-[380px] lg:flex-row lg:items-start lg:px-[55px] lg:pb-0 lg:pt-[28px] ${
+      className={`flex flex-col rounded-figma-panel border border-black bg-white px-5 py-6 sm:p-8 lg:flex-row lg:items-start lg:p-10 ${
         project.href
           ? "transition-shadow duration-200 group-hover:shadow-[0_10px_30px_rgba(10,22,128,0.15)]"
           : ""
       }`}
     >
-      <div className="h-[260px] w-full shrink-0 rounded-figma-panel bg-portfolio-gold sm:w-[257px] lg:h-[302px]" />
+      {project.cover ? (
+        // Portrait cover in a squarer frame: crop point sits high so the logo keeps headroom and the laptop stays whole.
+        <Image
+          src={project.cover.src}
+          alt={project.cover.alt}
+          width={project.cover.width}
+          height={project.cover.height}
+          sizes="(min-width: 640px) 232px, 100vw"
+          className={`${coverFrame} object-cover object-[50%_15%]`}
+        />
+      ) : (
+        <div className={`${coverFrame} bg-portfolio-gold`} />
+      )}
 
-      <div className="mt-7 max-w-[792px] lg:ml-[78px] lg:mt-[10px]">
-        <h3 className="font-display text-[32px] font-bold leading-tight text-portfolio-navy sm:text-[40px] sm:leading-none">
+      <div className="mt-7 lg:ml-[70px] lg:mt-2">
+        <h3 className="font-display text-[32px] font-bold leading-tight text-portfolio-navy sm:text-[36px] sm:leading-none">
           {project.title}
         </h3>
-        <p className="mt-4 text-[16px] leading-normal text-black sm:text-[20px] lg:mt-[30px]">
+        <p className="mt-4 text-[16px] leading-normal text-black sm:text-[18px] lg:mt-7">
           {project.discipline}
         </p>
-        <p className="mt-8 max-w-[617px] text-[17px] leading-[1.5] text-black sm:text-[20px] sm:leading-[30px] lg:mt-[24px]">
+        <p className="mt-8 max-w-[560px] text-[17px] leading-[1.5] text-black sm:text-[18px] lg:mt-5">
           {project.description}
         </p>
       </div>
@@ -55,13 +79,13 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content rounded-figma-panel bg-portfolio-paper px-6 pb-12 pt-8 sm:w-full sm:px-9 lg:mt-[115px] lg:min-h-[1158px] lg:px-[60px] lg:pb-[54px] lg:pt-[70px]"
+      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
     >
-      <h2 className="font-display text-[36px] font-bold leading-tight text-portfolio-navy sm:text-[50px] sm:leading-none">
+      <h2 className="font-display text-[36px] font-bold leading-tight text-portfolio-navy sm:text-[42px] sm:leading-none">
         Some Recent Projects
       </h2>
 
-      <div className="mt-9 space-y-8 lg:mt-[74px] lg:space-y-[77px]">
+      <div className="mt-9 space-y-8 lg:mt-16 lg:space-y-16">
         {projects.map((project) =>
           project.href ? (
             <Link

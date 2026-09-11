@@ -15,17 +15,17 @@ type SiteHeaderProps = {
 export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
   return (
     <header className="relative mx-auto flex w-[calc(100vw-40px)] max-w-figma-content flex-col items-start gap-4 sm:w-full sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-5 lg:flex-nowrap">
-      <Link href="/" className="flex items-center gap-[19px]">
+      <Link href="/" className="flex items-center gap-4">
         <Image
           src={logo.src}
           alt=""
           width={logo.width}
           height={logo.height}
           priority
-          className="h-[69px] w-[72px]"
+          className="h-[62px] w-[65px]"
         />
         <span
-          className={`font-display text-[25px] font-normal leading-none ${
+          className={`font-display text-[22px] font-normal leading-none ${
             tone === "light" ? "text-white" : "text-black"
           }`}
         >
@@ -35,13 +35,13 @@ export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
 
       <SiteNav activeHref={activeHref} />
 
-      <div className="flex items-center gap-[7px]">
+      <div className="flex items-center gap-[6px]">
         {socialLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
             aria-label={link.label}
-            className={`flex size-[43px] items-center justify-center rounded-figma-sm bg-black text-white focus-visible:outline-2 focus-visible:outline-offset-4 ${
+            className={`flex size-[39px] items-center justify-center rounded-figma-sm bg-black text-white focus-visible:outline-2 focus-visible:outline-offset-4 ${
               tone === "light"
                 ? "focus-visible:outline-white"
                 : "focus-visible:outline-portfolio-navy"

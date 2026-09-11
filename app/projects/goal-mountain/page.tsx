@@ -55,7 +55,7 @@ const problems = [
  * size explicitly or the numeral renders smaller than the heading beside it.
  */
 const stepList =
-  "list-decimal pl-7 marker:text-[24px] sm:marker:text-[30px] lg:pl-[45px]";
+  "list-decimal pl-7 marker:text-[24px] sm:marker:text-[26px] lg:pl-10";
 
 const principleRows = [
   ["Make progress concrete", "Mountain → Milestones → Summit"],
@@ -74,7 +74,7 @@ function Container({ children }: { children: ReactNode }) {
 
 function SectionHeading({ children }: { children: ReactNode }) {
   return (
-    <h2 className="font-display text-[34px] font-normal leading-tight text-goal-forest sm:text-[50px]">
+    <h2 className="font-display text-[34px] font-normal leading-tight text-goal-forest sm:text-[42px]">
       {children}
     </h2>
   );
@@ -82,7 +82,7 @@ function SectionHeading({ children }: { children: ReactNode }) {
 
 function DisplayHeading({ children }: { children: ReactNode }) {
   return (
-    <h3 className="font-display text-[24px] font-normal leading-normal sm:text-[30px]">
+    <h3 className="font-display text-[24px] font-normal leading-normal sm:text-[26px]">
       {children}
     </h3>
   );
@@ -90,7 +90,7 @@ function DisplayHeading({ children }: { children: ReactNode }) {
 
 function StepHeading({ children }: { children: ReactNode }) {
   return (
-    <h3 className="text-[24px] font-normal leading-normal sm:text-[30px]">
+    <h3 className="text-[24px] font-normal leading-normal sm:text-[26px]">
       {children}
     </h3>
   );
@@ -106,8 +106,8 @@ function Panel({
 }) {
   return (
     <div
-      className={`mt-10 rounded-figma-panel bg-white px-5 py-10 sm:px-10 lg:py-[50px] ${
-        bleed ? "-ml-7 lg:-ml-[45px]" : ""
+      className={`mt-10 rounded-figma-panel bg-white px-6 py-10 sm:px-10 lg:p-14 ${
+        bleed ? "-ml-7 lg:-ml-10" : ""
       }`}
     >
       {children}
@@ -123,12 +123,12 @@ function Finding({
   implication: ReactNode;
 }) {
   return (
-    <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:gap-[100px]">
-      <div className="lg:w-[522px]">
+    <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-16">
+      <div>
         <p>Evidence / Finding</p>
         <p>{evidence}</p>
       </div>
-      <div className="lg:w-[522px]">
+      <div>
         <p>Product Implication</p>
         <p>{implication}</p>
       </div>
@@ -142,9 +142,9 @@ function DownArrow() {
       <Image
         src={`${shots}/arrow-down.svg`}
         alt=""
-        width={60}
-        height={36}
-        className="h-[36px] w-[60px] rotate-90"
+        width={54}
+        height={32}
+        className="h-[32px] w-[54px] rotate-90"
       />
     </div>
   );
@@ -153,7 +153,7 @@ function DownArrow() {
 /**
  * The MVP loop diagram is a free-form Figma canvas rather than a stacked
  * layout, so on large screens its parts sit at absolute coordinates inside a
- * 1200x1854 box; below that each step collapses to a normal vertical sequence.
+ * 1080x1669 box; below that each step collapses to a normal vertical sequence.
  */
 function LoopCaption({
   children,
@@ -216,8 +216,8 @@ function Stage({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-10">
-      <div className="lg:w-[280px] lg:shrink-0">
+    <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-9">
+      <div className="lg:w-[252px] lg:shrink-0">
         <p>{label}</p>
         <p>{title}</p>
         <p>{body}</p>
@@ -229,7 +229,7 @@ function Stage({
 
 export default function GoalMountainPage() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-goal-mist pb-[120px] pt-8 text-[17px] leading-normal text-black sm:text-[20px] lg:pt-figma-header-top">
+    <main className="min-h-screen w-full overflow-x-hidden bg-goal-mist pb-[120px] pt-8 text-[17px] leading-normal text-black sm:text-[18px] lg:pt-figma-header-top">
       <Container>
         <SiteHeader />
       </Container>
@@ -239,21 +239,21 @@ export default function GoalMountainPage() {
         {/* The band is full-bleed and does the clipping, so the artwork below
             can hang past this 1440px column and run off the edge of the screen
             instead of being cut at the column's own boundary. */}
-        <div className="relative mx-auto flex min-h-[440px] w-full max-w-figma-artboard flex-col justify-end px-5 pb-14 pt-[220px] text-white sm:px-8 lg:block lg:h-[758px] lg:px-0 lg:py-0">
+        <div className="relative mx-auto flex min-h-[440px] w-full max-w-figma-artboard flex-col justify-end px-5 pb-14 pt-[220px] text-white sm:px-8 lg:block lg:h-[682px] lg:px-0 lg:py-0">
           <Image
             src={`${shots}/hero-mountain.svg`}
             alt=""
             width={772}
             height={516}
             priority
-            className="pointer-events-none absolute bottom-0 left-[-150px] w-[620px] max-w-none sm:left-[-190px] sm:w-[720px] lg:bottom-auto lg:left-[-218px] lg:top-[186px] lg:h-[515px] lg:w-[771px]"
+            className="pointer-events-none absolute bottom-0 left-[-150px] w-[620px] max-w-none sm:left-[-190px] sm:w-[720px] lg:bottom-auto lg:left-[-196px] lg:top-[167px] lg:h-[464px] lg:w-[694px]"
           />
 
-          <div className="relative lg:absolute lg:left-[120px] lg:top-[463px] lg:w-[775px]">
-            <h1 className="font-display text-[44px] font-normal leading-normal sm:text-[70px]">
+          <div className="relative lg:absolute lg:left-[108px] lg:top-[417px] lg:w-[698px]">
+            <h1 className="font-display text-[44px] font-normal leading-normal sm:text-[60px]">
               Goal Mountain
             </h1>
-            <p className="max-w-[773px] text-[19px] leading-normal sm:text-[25px]">
+            <p className="max-w-[696px] text-[19px] leading-normal sm:text-[22px]">
               An AI goal companion that turns long-term ambitions into adaptive,
               actionable plans.
             </p>
@@ -266,8 +266,8 @@ export default function GoalMountainPage() {
               width={2880}
               height={1622}
               frame="none"
-              sizes="428px"
-              className="absolute left-[734px] top-[93px] h-[241px] w-[428px] rounded-figma-shot"
+              sizes="385px"
+              className="absolute left-[661px] top-[84px] h-[217px] w-[385px] rounded-figma-shot"
             />
             <CaseStudyShot
               src={`${shots}/hero-mountains-grid.png`}
@@ -275,8 +275,8 @@ export default function GoalMountainPage() {
               width={2108}
               height={1588}
               frame="none"
-              sizes="221px"
-              className="absolute left-[1188px] top-[168px] h-[166px] w-[221px] rounded-figma-shot"
+              sizes="199px"
+              className="absolute left-[1069px] top-[151px] h-[149px] w-[199px] rounded-figma-shot"
             />
             <CaseStudyShot
               src={`${shots}/mvp-mountain.png`}
@@ -284,8 +284,8 @@ export default function GoalMountainPage() {
               width={2880}
               height={1504}
               frame="none"
-              sizes="212px"
-              className="absolute left-[792px] top-[360px] h-[161px] w-[212px] rounded-figma-shot"
+              sizes="191px"
+              className="absolute left-[713px] top-[324px] h-[145px] w-[191px] rounded-figma-shot"
             />
             <CaseStudyShot
               src={`${shots}/hero-first-week.png`}
@@ -293,19 +293,19 @@ export default function GoalMountainPage() {
               width={2028}
               height={1474}
               frame="none"
-              sizes="383px"
-              className="absolute left-[1028px] top-[360px] h-[278px] w-[383px] rounded-figma-shot"
+              sizes="345px"
+              className="absolute left-[925px] top-[324px] h-[250px] w-[345px] rounded-figma-shot"
             />
           </div>
         </div>
       </section>
 
       {/* 01 — Overview */}
-      <section className="mt-[70px]">
+      <section className="mt-[60px]">
         <Container>
           <SectionHeading>01 - Overview</SectionHeading>
-          <div className="mt-[70px] flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-[169px]">
-            <div className="lg:w-[512px]">
+          <div className="mt-[60px] grid gap-10 lg:grid-cols-2 lg:gap-x-[170px]">
+            <div>
               <p>
                 Goal Mountain is an AI-powered goal-achievement web app that
                 transforms long-term ambitions into personalized mountain
@@ -321,7 +321,7 @@ export default function GoalMountainPage() {
                 plans at any time.
               </p>
             </div>
-            <ul className="list-disc space-y-1 pl-6 lg:pl-[30px] lg:w-[498px]">
+            <ul className="list-disc space-y-1 pl-6 lg:pl-[30px]">
               {overviewFacts.map((fact) => (
                 <li key={fact.label}>
                   {fact.label}
@@ -340,10 +340,10 @@ export default function GoalMountainPage() {
       </section>
 
       {/* 02 — The Problem */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>02 - The Problem</SectionHeading>
-          <div className="mt-[70px] lg:w-[852px]">
+          <div className="mt-[60px] max-w-figma-text">
             <p>There are three challenges I work on for Goal Mountain:</p>
             <ol className={`mt-8 space-y-8 ${stepList}`}>
               {problems.map((problem) => (
@@ -358,16 +358,16 @@ export default function GoalMountainPage() {
       </section>
 
       {/* 03 — Research & Product Opportunity */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>
             03 - Research &amp; Product Opportunity
           </SectionHeading>
 
-          <div className="mt-[70px]">
+          <div className="mt-[60px]">
             <DisplayHeading>Secondary Research</DisplayHeading>
             <Panel>
-              <ol className={`space-y-[70px] ${stepList}`}>
+              <ol className={`space-y-[60px] ${stepList}`}>
                 <li>
                   <StepHeading>
                     Long-term goals become more actionable when progress is made
@@ -418,7 +418,7 @@ export default function GoalMountainPage() {
                 </li>
               </ol>
 
-              <div className="mt-[70px]">
+              <div className="mt-[60px]">
                 <StepHeading>
                   Supporting Insight — Timely support can reinforce
                   accountability without becoming intrusive
@@ -431,12 +431,12 @@ export default function GoalMountainPage() {
             </Panel>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <DisplayHeading>
               From research principles to product design
             </DisplayHeading>
             <div className="mt-8 overflow-x-auto">
-              <table className="w-full border-separate border-spacing-[10px] border border-black text-left lg:w-[873px]">
+              <table className="w-full border-separate border-spacing-[10px] border border-black text-left lg:w-[786px]">
                 <thead>
                   <tr>
                     <th scope="col" className="font-bold">
@@ -466,12 +466,12 @@ export default function GoalMountainPage() {
       </section>
 
       {/* 04 — Translating Research into the First Product Concept */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>
             04 - Translating Research into the First Product Concept
           </SectionHeading>
-          <p className="mt-[70px]">
+          <p className="mt-[60px]">
             Based on these principles, I designed the first end-to-end
             experience around three layers: a Mountain that makes the long-term
             route visible, a Weekly Plan that translates the current milestone
@@ -480,15 +480,15 @@ export default function GoalMountainPage() {
           </p>
 
           <Panel>
-            <div className="flex flex-col gap-8 lg:relative lg:mx-auto lg:h-[1048px] lg:w-[736px] lg:gap-0">
+            <div className="flex flex-col gap-8 lg:relative lg:mx-auto lg:h-[943px] lg:w-[663px] lg:gap-0">
               <CaseStudyShot
                 src={`${shots}/concept-1.png`}
                 alt="Early wireframe of a mountain route with milestones"
                 width={878}
                 height={1182}
                 frame="none"
-                sizes="(max-width: 1024px) 92vw, 263px"
-                className="aspect-[263/354] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-0 lg:h-[354px] lg:w-[263px] lg:max-w-none"
+                sizes="(max-width: 1024px) 92vw, 237px"
+                className="aspect-[263/354] w-full max-w-[263px] lg:absolute lg:left-[426px] lg:top-0 lg:h-[319px] lg:w-[237px] lg:max-w-none"
               />
               <CaseStudyShot
                 src={`${shots}/concept-2.png`}
@@ -496,8 +496,8 @@ export default function GoalMountainPage() {
                 width={876}
                 height={728}
                 frame="none"
-                sizes="(max-width: 1024px) 92vw, 438px"
-                className="aspect-[438/364] w-full max-w-[438px] lg:absolute lg:left-0 lg:top-[201px] lg:h-[364px] lg:w-[438px] lg:max-w-none"
+                sizes="(max-width: 1024px) 92vw, 394px"
+                className="aspect-[438/364] w-full max-w-[438px] lg:absolute lg:left-0 lg:top-[181px] lg:h-[328px] lg:w-[394px] lg:max-w-none"
               />
               <CaseStudyShot
                 src={`${shots}/concept-3.png`}
@@ -505,8 +505,8 @@ export default function GoalMountainPage() {
                 width={872}
                 height={702}
                 frame="none"
-                sizes="(max-width: 1024px) 92vw, 263px"
-                className="aspect-[263/212] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[383px] lg:h-[212px] lg:w-[263px] lg:max-w-none"
+                sizes="(max-width: 1024px) 92vw, 237px"
+                className="aspect-[263/212] w-full max-w-[263px] lg:absolute lg:left-[426px] lg:top-[345px] lg:h-[191px] lg:w-[237px] lg:max-w-none"
               />
               <CaseStudyShot
                 src={`${shots}/concept-4.png`}
@@ -514,8 +514,8 @@ export default function GoalMountainPage() {
                 width={872}
                 height={1446}
                 frame="none"
-                sizes="(max-width: 1024px) 92vw, 263px"
-                className="aspect-[263/437] w-full max-w-[263px] lg:absolute lg:left-[473px] lg:top-[611px] lg:h-[437px] lg:w-[263px] lg:max-w-none"
+                sizes="(max-width: 1024px) 92vw, 237px"
+                className="aspect-[263/437] w-full max-w-[263px] lg:absolute lg:left-[426px] lg:top-[550px] lg:h-[393px] lg:w-[237px] lg:max-w-none"
               />
             </div>
           </Panel>
@@ -529,12 +529,12 @@ export default function GoalMountainPage() {
       </section>
 
       {/* 05 — Refining the Human–AI Planning Experience */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>
             05 - Refining the Human–AI Planning Experience
           </SectionHeading>
-          <div className="mt-[70px] space-y-6">
+          <div className="mt-[60px] space-y-6">
             <p>
               Once I implemented the first flow and began self-testing it across
               different goals, a second layer of problems became visible.
@@ -547,13 +547,13 @@ export default function GoalMountainPage() {
             </p>
           </div>
 
-          <ol className={`mt-[70px] space-y-[100px] ${stepList}`}>
+          <ol className={`mt-[60px] space-y-[80px] ${stepList}`}>
             <li>
               <StepHeading>
                 Make the route useful without over-interviewing the user
               </StepHeading>
               <Panel bleed>
-                <p>
+                <p className="mx-auto">
                   Early versions of the Mountain intake tried to gather enough
                   context upfront to make the first route highly personalized.
                   In self-testing, however, the conversation could start to feel
@@ -568,11 +568,11 @@ export default function GoalMountainPage() {
                     width={1554}
                     height={1254}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 654px"
-                    className="aspect-[654/528] w-full max-w-[654px]"
+                    sizes="(max-width: 1024px) 92vw, 589px"
+                    className="aspect-[654/528] w-full max-w-[589px]"
                   />
                 </div>
-                <p className="mt-10">
+                <p className="mx-auto mt-10">
                   I shifted the intake from collecting maximum context to
                   identifying minimum viable understanding. Before asking
                   another question, the system considers whether the answer
@@ -586,11 +586,11 @@ export default function GoalMountainPage() {
                     width={1310}
                     height={1258}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 523px"
-                    className="aspect-[523/502] w-full max-w-[523px]"
+                    sizes="(max-width: 1024px) 92vw, 471px"
+                    className="aspect-[523/502] w-full max-w-[471px]"
                   />
                 </div>
-                <div className="mt-10 space-y-2">
+                <div className="mx-auto mt-10 max-w-figma-text space-y-2">
                   <p>
                     The current flow prioritizes roughly 3–4 high-value
                     follow-up turns. Users provide facts about their situation;
@@ -612,7 +612,7 @@ export default function GoalMountainPage() {
                 Treat AI-generated plans as proposals users can steer
               </StepHeading>
               <Panel bleed>
-                <p>
+                <p className="mx-auto">
                   The Weekly Plan introduced a different problem. Initially,
                   when the AI-generated plan felt wrong, the most visible
                   correction path was Discuss with AI—even for simple changes
@@ -625,11 +625,11 @@ export default function GoalMountainPage() {
                     width={1778}
                     height={1284}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 778px"
-                    className="aspect-[778/562] w-full max-w-[778px]"
+                    sizes="(max-width: 1024px) 92vw, 700px"
+                    className="aspect-[778/562] w-full max-w-[700px]"
                   />
                 </div>
-                <p className="mt-10">
+                <p className="mx-auto mt-10">
                   I realized that conversation should be an escalation path, not
                   the default interface for every AI-assisted action.
                 </p>
@@ -640,11 +640,11 @@ export default function GoalMountainPage() {
                     width={1552}
                     height={1260}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 776px"
-                    className="aspect-[776/630] w-full max-w-[776px]"
+                    sizes="(max-width: 1024px) 92vw, 698px"
+                    className="aspect-[776/630] w-full max-w-[698px]"
                   />
                 </div>
-                <div className="mt-10 space-y-6">
+                <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     Every weekly plan now begins as a Draft. Users can review
                     and modify it before pressing Start this week; only then
@@ -683,7 +683,7 @@ export default function GoalMountainPage() {
                 Let guidance learn progressively—and show what changed
               </StepHeading>
               <Panel bleed>
-                <p>
+                <p className="mx-auto">
                   Adaptation creates another tension: the plan should respond to
                   reality, but an AI that continuously rewrites user commitments
                   can quickly become unpredictable.
@@ -695,11 +695,11 @@ export default function GoalMountainPage() {
                     width={1560}
                     height={1456}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 780px"
-                    className="aspect-[780/720] w-full max-w-[780px]"
+                    sizes="(max-width: 1024px) 92vw, 702px"
+                    className="aspect-[780/720] w-full max-w-[702px]"
                   />
                 </div>
-                <div className="mt-10 space-y-6">
+                <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     Meaningful AI-generated plan changes therefore become
                     Proposed Revisions rather than silently replacing the
@@ -723,11 +723,11 @@ export default function GoalMountainPage() {
                     width={1596}
                     height={1400}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 725px"
-                    className="aspect-[725/636] w-full max-w-[725px]"
+                    sizes="(max-width: 1024px) 92vw, 653px"
+                    className="aspect-[725/636] w-full max-w-[653px]"
                   />
                 </div>
-                <div className="mt-10 space-y-6">
+                <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     These signals feed automatic reflection and long-term
                     memory, which then inform future plans. The next Draft
@@ -749,10 +749,10 @@ export default function GoalMountainPage() {
       </section>
 
       {/* 06 — The Current MVP */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>06 - The Current MVP</SectionHeading>
-          <div className="mt-[70px] space-y-6">
+          <div className="mt-[60px] space-y-6">
             <div>
               <p>The Current MVP</p>
               <p>
@@ -764,7 +764,7 @@ export default function GoalMountainPage() {
             <p>Understand → Plan → Act → Learn → Adapt</p>
           </div>
 
-          <div className="mt-10 rounded-figma-panel bg-white px-5 py-10 text-[18px] leading-normal sm:px-10 sm:text-[20px] lg:h-[1854px] lg:overflow-hidden lg:px-0 lg:py-0">
+          <div className="mt-10 rounded-figma-panel bg-white px-6 py-10 sm:px-10 lg:h-[1669px] lg:overflow-hidden lg:p-0">
             <ol className="flex list-none flex-col gap-14 lg:relative lg:h-full lg:gap-0">
               <li className="lg:absolute lg:inset-0">
                 <CaseStudyShot
@@ -773,19 +773,19 @@ export default function GoalMountainPage() {
                   width={992}
                   height={1012}
                   frame="none"
-                  sizes="(max-width: 1024px) 92vw, 330px"
-                  className="aspect-[330/337] w-full max-w-[330px] lg:absolute lg:left-[80px] lg:top-[83px] lg:h-[337px] lg:w-[330px] lg:max-w-none"
+                  sizes="(max-width: 1024px) 92vw, 297px"
+                  className="aspect-[330/337] w-full max-w-[330px] lg:absolute lg:left-[72px] lg:top-[75px] lg:h-[303px] lg:w-[297px] lg:max-w-none"
                 />
-                <LoopCaption className="lg:left-[55px] lg:top-[447px]">
+                <LoopCaption className="lg:left-[50px] lg:top-[402px]">
                   1. Build enough context to shape the route
                 </LoopCaption>
               </li>
 
               <LoopArrow
                 src="loop-arrow-right.svg"
-                width={92}
-                height={59}
-                className="lg:left-[522px] lg:top-[223px]"
+                width={83}
+                height={53}
+                className="lg:left-[470px] lg:top-[201px]"
               />
 
               <li className="lg:absolute lg:inset-0">
@@ -796,8 +796,8 @@ export default function GoalMountainPage() {
                     width={2880}
                     height={1504}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 292px"
-                    className="aspect-[292/222] w-full max-w-[400px] lg:absolute lg:left-[701px] lg:top-[83px] lg:h-[222px] lg:w-[292px] lg:max-w-none"
+                    sizes="(max-width: 1024px) 92vw, 263px"
+                    className="aspect-[292/222] w-full max-w-[400px] lg:absolute lg:left-[631px] lg:top-[75px] lg:h-[200px] lg:w-[263px] lg:max-w-none"
                   />
                   <CaseStudyShot
                     src={`${shots}/hero-first-week.png`}
@@ -805,45 +805,45 @@ export default function GoalMountainPage() {
                     width={2028}
                     height={1474}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 292px"
-                    className="aspect-[292/212] w-full max-w-[400px] lg:absolute lg:left-[701px] lg:top-[314px] lg:h-[212px] lg:w-[292px] lg:max-w-none"
+                    sizes="(max-width: 1024px) 92vw, 263px"
+                    className="aspect-[292/212] w-full max-w-[400px] lg:absolute lg:left-[631px] lg:top-[283px] lg:h-[191px] lg:w-[263px] lg:max-w-none"
                   />
                 </div>
-                <LoopCaption className="lg:left-[653px] lg:top-[553px]">
+                <LoopCaption className="lg:left-[588px] lg:top-[498px]">
                   2. Turn the goal into a route and actionable week
                 </LoopCaption>
               </li>
 
               <LoopArrow
                 src="loop-arrow-diag.svg"
-                width={61}
-                height={83}
-                className="lg:left-[746px] lg:top-[620px]"
+                width={55}
+                height={75}
+                className="lg:left-[671px] lg:top-[558px]"
               />
 
               <li className="lg:absolute lg:inset-0">
                 <div className="flex flex-col gap-4 lg:block">
-                  <div className="relative w-full max-w-[120px] lg:absolute lg:left-[245px] lg:top-[704px] lg:h-[350px] lg:w-[61px] lg:max-w-none">
+                  <div className="relative w-full max-w-[120px] lg:absolute lg:left-[220px] lg:top-[634px] lg:h-[315px] lg:w-[55px] lg:max-w-none">
                     <CaseStudyShot
                       src={`${shots}/mvp-loop-day.png`}
                       alt="A single day in the weekly plan with its check-in controls"
                       width={258}
                       height={1486}
                       frame="none"
-                      sizes="(max-width: 1024px) 120px, 61px"
+                      sizes="(max-width: 1024px) 120px, 55px"
                       className="aspect-[61/350] w-full lg:aspect-auto lg:size-full"
                     />
                     <LoopHighlight className="left-[6.557%] top-[33.143%] h-[14.857%] w-[85.246%]" />
                     <LoopHighlight className="left-[8.197%] top-[81.143%] h-[17.714%] w-[83.607%]" />
                   </div>
-                  <div className="relative w-full max-w-[580px] lg:absolute lg:left-[337px] lg:top-[723px] lg:h-[327px] lg:w-[580px] lg:max-w-none">
+                  <div className="relative w-full max-w-[580px] lg:absolute lg:left-[303px] lg:top-[651px] lg:h-[294px] lg:w-[522px] lg:max-w-none">
                     <CaseStudyShot
                       src={`${shots}/mvp-loop-week.png`}
                       alt="The active weekly plan alongside the AI Guide"
                       width={2880}
                       height={1624}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 580px"
+                      sizes="(max-width: 1024px) 92vw, 522px"
                       className="aspect-[580/327] w-full lg:aspect-auto lg:size-full"
                     />
                     <LoopHighlight className="left-[18.621%] top-[-2.446%] h-[7.645%] w-[25.862%]" />
@@ -852,26 +852,26 @@ export default function GoalMountainPage() {
                 </div>
                 <LoopArrow
                   src="loop-arrow-back.svg"
-                  width={145}
-                  height={47}
-                  className="lg:left-[305px] lg:top-[794px]"
+                  width={131}
+                  height={42}
+                  className="lg:left-[275px] lg:top-[715px]"
                 />
-                <LoopCaption className="lg:left-[417px] lg:top-[1086px]">
+                <LoopCaption className="lg:left-[375px] lg:top-[977px]">
                   3. Take action, check in, and steer
                 </LoopCaption>
               </li>
 
               <LoopArrow
                 src="loop-arrow-diag.svg"
-                width={61}
-                height={83}
-                className="lg:left-[302px] lg:top-[1136px]"
+                width={55}
+                height={75}
+                className="lg:left-[272px] lg:top-[1022px]"
               />
 
               <li className="lg:absolute lg:inset-0">
                 <div className="flex flex-col gap-8 lg:block">
                   <div>
-                    <p className="font-bold lg:absolute lg:left-[103px] lg:top-[1271px] lg:whitespace-nowrap">
+                    <p className="font-bold lg:absolute lg:left-[93px] lg:top-[1144px] lg:whitespace-nowrap">
                       FOR THE USER
                     </p>
                     <CaseStudyShot
@@ -880,61 +880,61 @@ export default function GoalMountainPage() {
                       width={1102}
                       height={1530}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 238px"
-                      className="mt-2 aspect-[238/331] w-full max-w-[320px] lg:absolute lg:left-[55px] lg:top-[1305px] lg:mt-0 lg:h-[331px] lg:w-[238px] lg:max-w-none"
+                      sizes="(max-width: 1024px) 92vw, 214px"
+                      className="mt-2 aspect-[238/331] w-full max-w-[320px] lg:absolute lg:left-[50px] lg:top-[1175px] lg:mt-0 lg:h-[298px] lg:w-[214px] lg:max-w-none"
                     />
                   </div>
                   <div>
-                    <p className="font-bold lg:absolute lg:left-[372px] lg:top-[1271px] lg:whitespace-nowrap">
+                    <p className="font-bold lg:absolute lg:left-[335px] lg:top-[1144px] lg:whitespace-nowrap">
                       FOR THE SYSTEM
                     </p>
-                    <div className="relative mt-2 w-full max-w-[380px] lg:absolute lg:left-[325px] lg:top-[1302px] lg:mt-0 lg:h-[335px] lg:w-[287px] lg:max-w-none">
+                    <div className="relative mt-2 w-full max-w-[380px] lg:absolute lg:left-[293px] lg:top-[1172px] lg:mt-0 lg:h-[302px] lg:w-[258px] lg:max-w-none">
                       <CaseStudyShot
                         src={`${shots}/mvp-loop-memory.png`}
                         alt="The memory profile the system keeps about the user"
                         width={1290}
                         height={1504}
                         frame="none"
-                        sizes="(max-width: 1024px) 92vw, 287px"
+                        sizes="(max-width: 1024px) 92vw, 258px"
                         className="aspect-[287/335] w-full lg:aspect-auto lg:size-full"
                       />
                       <LoopHighlight className="left-[1.742%] top-[83.582%] h-[14.627%] w-[96.167%]" />
                     </div>
                   </div>
                 </div>
-                <LoopCaption className="lg:left-[156px] lg:top-[1667px]">
+                <LoopCaption className="lg:left-[140px] lg:top-[1500px]">
                   4. Turn progress into insights and memory
                 </LoopCaption>
               </li>
 
               <LoopArrow
                 src="loop-arrow-right.svg"
-                width={92}
-                height={59}
-                className="lg:left-[659px] lg:top-[1447px]"
+                width={83}
+                height={53}
+                className="lg:left-[593px] lg:top-[1302px]"
               />
 
               <li className="lg:absolute lg:inset-0">
-                <div className="relative w-full max-w-[420px] lg:absolute lg:left-[786px] lg:top-[1318px] lg:h-[315px] lg:w-[330px] lg:max-w-none">
+                <div className="relative w-full max-w-[420px] lg:absolute lg:left-[707px] lg:top-[1186px] lg:h-[284px] lg:w-[297px] lg:max-w-none">
                   <CaseStudyShot
                     src={`${shots}/mvp-loop-next-week.png`}
                     alt="The next weekly draft showing what changed from last week"
                     width={1682}
                     height={1606}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 330px"
+                    sizes="(max-width: 1024px) 92vw, 297px"
                     className="aspect-[330/315] w-full lg:aspect-auto lg:size-full"
                   />
                   <LoopHighlight className="left-[5.758%] top-[7.937%] h-[14.603%] w-[89.697%]" />
                 </div>
-                <LoopCaption className="lg:left-[731px] lg:top-[1657px]">
+                <LoopCaption className="lg:left-[658px] lg:top-[1491px]">
                   5. Use that context to shape what comes next
                 </LoopCaption>
               </li>
             </ol>
           </div>
 
-          <ol className={`mt-[100px] space-y-[100px] ${stepList}`}>
+          <ol className={`mt-[80px] space-y-[80px] ${stepList}`}>
             <li>
               <StepHeading>Turn an ambition into a route</StepHeading>
               <div className="mt-6">
@@ -952,15 +952,15 @@ export default function GoalMountainPage() {
                   title="Conversational intake"
                   body="Captures goal, starting point, timing, capacity, and critical constraints."
                 >
-                  <div className="flex flex-col gap-8 lg:relative lg:h-[594px] lg:w-[800px] lg:gap-0">
+                  <div className="flex flex-col gap-8 lg:relative lg:aspect-[800/594] lg:w-full lg:gap-0">
                     <CaseStudyShot
                       src={`${shots}/mvp-intake-1.png`}
                       alt="Starting a new mountain from a plain-language goal"
                       width={2880}
                       height={1622}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 405px"
-                      className="aspect-[405/228] w-full max-w-[405px] lg:absolute lg:left-0 lg:top-0 lg:h-[228px] lg:w-[405px] lg:max-w-none"
+                      sizes="(max-width: 1024px) 92vw, 344px"
+                      className="aspect-[405/228] w-full max-w-[405px] lg:absolute lg:left-0 lg:top-0 lg:w-[50.625%] lg:max-w-none"
                     />
                     <CaseStudyShot
                       src={`${shots}/mvp-intake-2.png`}
@@ -968,8 +968,8 @@ export default function GoalMountainPage() {
                       width={992}
                       height={1012}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 469px"
-                      className="aspect-[469/479] w-full max-w-[469px] lg:absolute lg:left-[331px] lg:top-[114px] lg:h-[479px] lg:w-[469px] lg:max-w-none"
+                      sizes="(max-width: 1024px) 92vw, 399px"
+                      className="aspect-[469/479] w-full max-w-[469px] lg:absolute lg:left-[41.375%] lg:top-[19.19%] lg:w-[58.625%] lg:max-w-none"
                     />
                   </div>
                 </Stage>
@@ -988,8 +988,8 @@ export default function GoalMountainPage() {
                       width={1528}
                       height={1222}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 661px"
-                      className="aspect-[661/529] w-full max-w-[661px]"
+                      sizes="(max-width: 1024px) 92vw, 595px"
+                      className="aspect-[661/529] w-full max-w-[595px]"
                     />
                   </div>
                 </Stage>
@@ -1008,8 +1008,8 @@ export default function GoalMountainPage() {
                       width={2880}
                       height={1504}
                       frame="none"
-                      sizes="(max-width: 1024px) 92vw, 697px"
-                      className="aspect-[697/530] w-full max-w-[697px]"
+                      sizes="(max-width: 1024px) 92vw, 627px"
+                      className="aspect-[697/530] w-full max-w-[627px]"
                     />
                   </div>
                 </Stage>
@@ -1030,7 +1030,7 @@ export default function GoalMountainPage() {
                 </p>
               </div>
               <Panel bleed>
-                <p>Weekly Plan Draft state</p>
+                <p className="mx-auto text-center">Weekly Plan Draft state</p>
                 <div className="mt-8 flex justify-center">
                   <CaseStudyShot
                     src={`${shots}/mvp-draft.png`}
@@ -1038,11 +1038,11 @@ export default function GoalMountainPage() {
                     width={2138}
                     height={974}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 1020px"
-                    className="aspect-[1020/465] w-full max-w-[1020px]"
+                    sizes="(max-width: 1024px) 92vw, 918px"
+                    className="aspect-[1020/465] w-full max-w-[918px]"
                   />
                 </div>
-                <p className="mt-[100px]">
+                <p className="mx-auto mt-[80px] text-center">
                   AI proposal → Replace → Preview → Updated draft
                 </p>
                 <div className="mt-8 flex justify-center">
@@ -1052,8 +1052,8 @@ export default function GoalMountainPage() {
                     width={1534}
                     height={1336}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 767px"
-                    className="aspect-[767/668] w-full max-w-[767px]"
+                    sizes="(max-width: 1024px) 92vw, 690px"
+                    className="aspect-[767/668] w-full max-w-[690px]"
                   />
                 </div>
               </Panel>
@@ -1081,8 +1081,8 @@ export default function GoalMountainPage() {
                     width={2294}
                     height={1232}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 1016px"
-                    className="aspect-[1016/546] w-full max-w-[1016px]"
+                    sizes="(max-width: 1024px) 92vw, 914px"
+                    className="aspect-[1016/546] w-full max-w-[914px]"
                   />
                 </div>
               </Panel>
@@ -1109,8 +1109,8 @@ export default function GoalMountainPage() {
                     width={1562}
                     height={1416}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 781px"
-                    className="aspect-[781/708] w-full max-w-[781px]"
+                    sizes="(max-width: 1024px) 92vw, 703px"
+                    className="aspect-[781/708] w-full max-w-[703px]"
                   />
                 </div>
               </Panel>
@@ -1128,11 +1128,11 @@ export default function GoalMountainPage() {
                     width={2324}
                     height={784}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 1020px"
-                    className="aspect-[1020/311] w-full max-w-[1020px]"
+                    sizes="(max-width: 1024px) 92vw, 918px"
+                    className="aspect-[1020/311] w-full max-w-[918px]"
                   />
                 </div>
-                <div className="mt-10">
+                <div className="mx-auto mt-10 max-w-figma-text">
                   <p>Contextual AI Guide</p>
                   <p>
                     The same Guide can reason within one mountain or across
@@ -1140,18 +1140,18 @@ export default function GoalMountainPage() {
                     reflection, and memories as context.
                   </p>
                 </div>
-                <div className="mt-[70px] flex justify-center">
+                <div className="mt-[60px] flex justify-center">
                   <CaseStudyShot
                     src={`${shots}/mvp-insights.png`}
                     alt="The insights view with patterns, bottlenecks, and trade-offs"
                     width={940}
                     height={1314}
                     frame="none"
-                    sizes="(max-width: 1024px) 92vw, 565px"
-                    className="aspect-[565/790] w-full max-w-[565px]"
+                    sizes="(max-width: 1024px) 92vw, 509px"
+                    className="aspect-[565/790] w-full max-w-[509px]"
                   />
                 </div>
-                <div className="mt-10">
+                <div className="mx-auto mt-10 max-w-figma-text">
                   <p>Strategic Intelligence</p>
                   <p>
                     Insights turn accumulated journey data into patterns,

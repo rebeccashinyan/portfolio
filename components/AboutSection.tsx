@@ -23,19 +23,19 @@ export function AboutSection({
   return (
     <section
       id={id}
-      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content overflow-hidden rounded-figma-panel bg-portfolio-paper px-7 pb-10 pt-9 sm:w-full sm:px-9 lg:mt-[78px] lg:h-[888px] lg:pt-[39px]"
+      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content overflow-hidden rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
     >
-      <h1 className="font-display text-[42px] font-normal leading-none text-portfolio-navy sm:text-[64px]">
+      <h1 className="font-display text-[42px] font-normal leading-none text-portfolio-navy sm:text-[56px]">
         {title}
       </h1>
 
-      <div className="mt-7 max-w-full space-y-[22px] break-words text-[17px] font-bold leading-[1.5] sm:text-[20px] sm:leading-[30px] lg:mt-[39px] lg:max-w-[1124px]">
+      <div className="mt-7 max-w-figma-text space-y-5 break-words text-[17px] font-bold leading-[1.5] sm:text-[18px] lg:mt-9">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
 
-      <div className="relative mt-12 aspect-[941/490] w-full max-w-[941px] overflow-hidden lg:ml-[98px] lg:mt-[63px]">
+      <div className="relative mx-auto mt-12 aspect-[941/490] w-full max-w-[847px] overflow-hidden lg:mt-14">
         <div className="absolute left-[42%] top-[24.7%] h-[44.1%] w-[17.2%] rounded-figma-panel bg-portfolio-periwinkle" />
         <Image
           src={illustration.src}

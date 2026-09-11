@@ -1,16 +1,16 @@
 const craftColumns = [
   [
-    "lg:h-[161px]",
-    "lg:h-[258px]",
-    "lg:h-[161px]",
+    "lg:h-[143px]",
+    "lg:h-[228px]",
+    "lg:h-[143px]",
   ],
   [
-    "lg:h-[350px]",
-    "lg:h-[232px]",
+    "lg:h-[319px]",
+    "lg:h-[211px]",
   ],
   [
-    "lg:h-[236px]",
-    "lg:h-[350px]",
+    "lg:h-[213px]",
+    "lg:h-[317px]",
   ],
 ];
 
@@ -18,17 +18,17 @@ export function CraftSection() {
   return (
     <section
       id="craft"
-      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content rounded-figma-panel bg-portfolio-paper px-6 pb-8 pt-8 sm:w-full sm:px-9 lg:mt-[104px] lg:h-[780px] lg:px-[52px] lg:pb-0 lg:pt-[35px]"
+      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
     >
-      <h1 className="font-display text-[42px] font-bold leading-none text-portfolio-navy sm:text-[50px]">
+      <h1 className="font-display text-[36px] font-bold leading-none text-portfolio-navy sm:text-[42px]">
         Craft
       </h1>
 
-      <div className="mt-8 grid gap-[14px] sm:grid-cols-2 lg:mt-[42px] lg:w-[1108px] lg:grid-cols-[354px_354px_354px] lg:gap-x-[23px]">
+      <div className="mt-8 grid gap-[14px] sm:grid-cols-2 lg:mt-9 lg:grid-cols-3 lg:gap-4">
         {craftColumns.map((column, columnIndex) => (
           <div
             key={columnIndex}
-            className={`grid gap-[14px] ${columnIndex === 1 ? "lg:gap-[26px]" : ""} ${columnIndex === 2 ? "lg:gap-[22px]" : ""}`}
+            className="grid gap-[14px] lg:gap-4"
           >
             {column.map((heightClass, itemIndex) => (
               <div

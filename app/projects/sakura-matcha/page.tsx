@@ -65,7 +65,7 @@ function Container({ children }: { children: ReactNode }) {
 
 function SectionHeading({ children }: { children: ReactNode }) {
   return (
-    <h2 className="font-display text-[34px] font-normal leading-none text-white sm:text-[50px]">
+    <h2 className="font-display text-[34px] font-normal leading-none text-white sm:text-[42px]">
       {children}
     </h2>
   );
@@ -80,7 +80,7 @@ function BlockHeading({
 }) {
   return (
     <h3
-      className={`text-[24px] font-normal leading-normal sm:text-[30px] ${
+      className={`text-[24px] font-normal leading-normal sm:text-[26px] ${
         tone === "light" ? "text-white" : "text-black"
       }`}
     >
@@ -91,7 +91,7 @@ function BlockHeading({
 
 function Panel({ children }: { children: ReactNode }) {
   return (
-    <div className="mt-10 rounded-figma-panel bg-sakura-paper px-5 py-10 text-black sm:px-10 sm:py-[50px] lg:px-[60px]">
+    <div className="mt-10 rounded-figma-panel bg-sakura-paper px-6 py-10 text-black sm:px-10 lg:p-14">
       {children}
     </div>
   );
@@ -106,7 +106,7 @@ function Exhibit({
 }) {
   return (
     <figure className="flex flex-col items-center">
-      <figcaption className="text-center text-[16px] leading-normal sm:text-[18px]">
+      <figcaption className="text-center text-[16px] leading-normal">
         {caption}
       </figcaption>
       <div className="mt-10 flex w-full justify-center">{children}</div>
@@ -116,7 +116,7 @@ function Exhibit({
 
 export default function SakuraMatchaPage() {
   return (
-    <main className="isolate min-h-screen w-full overflow-x-hidden bg-sakura-ink pb-[120px] pt-8 text-[17px] leading-normal text-white sm:text-[20px] lg:pt-figma-header-top">
+    <main className="isolate min-h-screen w-full overflow-x-hidden bg-sakura-ink pb-[120px] pt-8 text-[17px] leading-normal text-white sm:text-[18px] lg:pt-figma-header-top">
       <SakuraPetals />
 
       <Container>
@@ -124,7 +124,7 @@ export default function SakuraMatchaPage() {
       </Container>
 
       {/* Hero */}
-      <section className="relative mt-12 w-full overflow-hidden lg:mt-20 lg:h-[708px]">
+      <section className="relative mt-12 w-full overflow-hidden lg:mt-[72px] lg:h-[637px]">
         <Image
           src="/figma-assets/hero-backdrop.png"
           alt=""
@@ -134,15 +134,15 @@ export default function SakuraMatchaPage() {
           className="object-cover object-top"
         />
         <div className="relative mx-auto h-full w-full max-w-figma-artboard px-5 py-16 sm:px-8 lg:px-0 lg:py-0">
-          <div className="lg:absolute lg:left-[120px] lg:top-[293px] lg:w-[775px]">
-            <p className="text-[16px] leading-normal sm:text-[18px]">
+          <div className="lg:absolute lg:left-[108px] lg:top-[264px] lg:w-[698px]">
+            <p className="text-[16px] leading-normal">
               SAKURA MATCHA · WEB &amp; AI EXPERIENCE
             </p>
-            <h1 className="mt-6 max-w-[775px] text-[28px] font-normal leading-tight sm:text-[36px]">
+            <h1 className="mt-5 max-w-[698px] text-[28px] font-normal leading-tight sm:text-[32px]">
               Designing a brand-driven matcha café website with AI-supported
               menu decisions
             </h1>
-            <p className="mt-8 max-w-[609px] text-[16px] leading-normal sm:text-[18px]">
+            <p className="mt-7 max-w-[548px] text-[16px] leading-normal">
               A responsive web experience that combines a distinctive brand
               identity, intuitive digital experience, and Ask Sakura, which is a
               grounded AI assistant that helps customers decide what to order.
@@ -157,8 +157,8 @@ export default function SakuraMatchaPage() {
               height={4096}
               frame="light"
               align="top"
-              sizes="273px"
-              className="absolute left-[968px] top-[13px] h-[449px] w-[273px]"
+              sizes="246px"
+              className="absolute left-[871px] top-[12px] h-[404px] w-[246px]"
             />
             <CaseStudyShot
               src={`${shots}/filtering-1.png`}
@@ -166,8 +166,8 @@ export default function SakuraMatchaPage() {
               width={2268}
               height={1152}
               frame="light"
-              sizes="282px"
-              className="absolute left-[1100px] top-[354px] h-[143px] w-[282px]"
+              sizes="254px"
+              className="absolute left-[990px] top-[319px] h-[129px] w-[254px]"
             />
             <CaseStudyShot
               src={`${shots}/filtering-2.png`}
@@ -175,19 +175,19 @@ export default function SakuraMatchaPage() {
               width={2044}
               height={1342}
               frame="light"
-              sizes="282px"
-              className="absolute left-[1100px] top-[513px] h-[185px] w-[282px]"
+              sizes="254px"
+              className="absolute left-[990px] top-[462px] h-[167px] w-[254px]"
             />
           </div>
         </div>
       </section>
 
       {/* 01 — Overview */}
-      <section className="mt-[70px]">
+      <section className="mt-[60px]">
         <Container>
           <SectionHeading>01 - Overview</SectionHeading>
-          <div className="mt-[70px] flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-[189px]">
-            <div className="lg:w-[512px]">
+          <div className="mt-[60px] grid gap-10 lg:grid-cols-2 lg:gap-x-[170px]">
+            <div>
               <p>Sakura Matcha is a self-created matcha brand.</p>
               <p>
                 This project focuses on building a brand-driven café website
@@ -197,7 +197,7 @@ export default function SakuraMatchaPage() {
                 menu and make more personalized choices.
               </p>
             </div>
-            <ul className="list-disc space-y-1 pl-[30px] lg:w-[498px]">
+            <ul className="list-disc space-y-1 pl-[30px]">
               {overviewFacts.map((fact) => (
                 <li key={fact}>{fact}</li>
               ))}
@@ -207,10 +207,10 @@ export default function SakuraMatchaPage() {
       </section>
 
       {/* 02 — The Problem */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>02 - The Problem</SectionHeading>
-          <div className="mt-[70px] lg:w-[852px]">
+          <div className="mt-[60px] max-w-figma-text">
             <p>There are three challenges I work on for Sakura Matcha:</p>
             <div className="mt-10 space-y-10">
               {problems.map((problem) => (
@@ -229,17 +229,17 @@ export default function SakuraMatchaPage() {
       </section>
 
       {/* 03 — Three Key Decisions & Design Exploration */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>
             03 - Three Key Decisions &amp; Design Exploration
           </SectionHeading>
 
-          <div className="mt-[70px]">
+          <div className="mt-[60px]">
             <BlockHeading>
               1. Building a Recognizable Brand Identity
             </BlockHeading>
-            <p className="mt-3 lg:w-[1165px]">
+            <p className="mt-3">
               Sakura was selected as the central visual motif and became the
               basis for the name “Sakura Matcha,” giving the brand a distinctive
               element that could be carried consistently across different
@@ -251,15 +251,15 @@ export default function SakuraMatchaPage() {
               calm, soft, and premium.
             </p>
             <Panel>
-              <div className="space-y-[60px]">
+              <div className="space-y-14">
                 <Exhibit caption="Color exploration moodboard">
                   <CaseStudyShot
                     src={`${shots}/moodboard.png`}
                     alt="Moodboard of color and texture references for the brand"
                     width={1260}
                     height={732}
-                    sizes="(max-width: 1024px) 92vw, 515px"
-                    className="aspect-[515/299] w-full max-w-[515px]"
+                    sizes="(max-width: 1024px) 92vw, 464px"
+                    className="aspect-[515/299] w-full max-w-[464px]"
                   />
                 </Exhibit>
                 <Exhibit caption="Final selected palette / Final Color System">
@@ -268,8 +268,8 @@ export default function SakuraMatchaPage() {
                     alt="Final color system swatches"
                     width={1154}
                     height={918}
-                    sizes="190px"
-                    className="aspect-[190/294] w-[190px]"
+                    sizes="171px"
+                    className="aspect-[190/294] w-[171px]"
                   />
                 </Exhibit>
                 <Exhibit caption="Homepage background-color tests">
@@ -278,19 +278,19 @@ export default function SakuraMatchaPage() {
                     alt="Three homepage variations tested with different background colors"
                     width={1450}
                     height={1136}
-                    sizes="(max-width: 1024px) 92vw, 444px"
-                    className="aspect-[444/348] w-full max-w-[444px]"
+                    sizes="(max-width: 1024px) 92vw, 400px"
+                    className="aspect-[444/348] w-full max-w-[400px]"
                   />
                 </Exhibit>
               </div>
             </Panel>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <BlockHeading>
               2. Balancing Brand Expression with Usability
             </BlockHeading>
-            <p className="mt-3 lg:w-[1178px]">
+            <p className="mt-3">
               The website structure was designed to communicate the brand’s
               personality without making the experience difficult to understand
               or navigate. Familiar navigation patterns, clear content
@@ -302,15 +302,15 @@ export default function SakuraMatchaPage() {
               clear, accessible, and easy to use.
             </p>
             <Panel>
-              <div className="space-y-[60px]">
+              <div className="space-y-14">
                 <Exhibit caption="Separate page (wireframe) → Integrated homepage experience (Final Figma Design) Comparison">
                   <CaseStudyShot
                     src={`${shots}/wireframe-comparison.png`}
                     alt="Wireframe of a separate page next to the integrated homepage design"
                     width={2168}
                     height={1106}
-                    sizes="(max-width: 1024px) 92vw, 783px"
-                    className="aspect-[783/399] w-full max-w-[783px]"
+                    sizes="(max-width: 1024px) 92vw, 705px"
+                    className="aspect-[783/399] w-full max-w-[705px]"
                   />
                 </Exhibit>
                 <Exhibit caption="Brand-heavy dark aesthetic vs menu information readability / scannability">
@@ -319,19 +319,19 @@ export default function SakuraMatchaPage() {
                     alt="Dark brand-led menu layout compared with a more readable menu layout"
                     width={1618}
                     height={1418}
-                    sizes="(max-width: 1024px) 92vw, 517px"
-                    className="aspect-[517/453] w-full max-w-[517px]"
+                    sizes="(max-width: 1024px) 92vw, 465px"
+                    className="aspect-[517/453] w-full max-w-[465px]"
                   />
                 </Exhibit>
               </div>
             </Panel>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <BlockHeading>
               3. Supporting Menu Decisions with an AI Assistant
             </BlockHeading>
-            <p className="mt-3 lg:w-[1178px]">
+            <p className="mt-3">
               Ask Sakura is Sakura Matcha’s AI assistant, built to help
               customers who may be unfamiliar with matcha or uncertain about
               what to order.
@@ -339,9 +339,9 @@ export default function SakuraMatchaPage() {
             <Panel>
               <BlockHeading tone="dark">Core AI Capabilities</BlockHeading>
 
-              <div className="mt-[50px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-                <div className="lg:w-[448px]">
-                  <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[44px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+                <div className="lg:w-[403px]">
+                  <h4 className="text-[20px] leading-normal sm:text-[22px]">
                     1. Personalized Recommendations
                   </h4>
                   <p className="mt-3">
@@ -361,23 +361,23 @@ export default function SakuraMatchaPage() {
                     alt="Ask Sakura asking a follow-up question about preferences"
                     width={2268}
                     height={1152}
-                    sizes="(max-width: 1024px) 92vw, 417px"
-                    className="aspect-[417/212] w-full max-w-[417px]"
+                    sizes="(max-width: 1024px) 92vw, 375px"
+                    className="aspect-[417/212] w-full max-w-[375px]"
                   />
                   <CaseStudyShot
                     src={`${shots}/personalized-2.png`}
                     alt="Recommended menu items shown as structured cards"
                     width={2268}
                     height={1152}
-                    sizes="(max-width: 1024px) 92vw, 417px"
-                    className="aspect-[417/212] w-full max-w-[417px]"
+                    sizes="(max-width: 1024px) 92vw, 375px"
+                    className="aspect-[417/212] w-full max-w-[375px]"
                   />
                 </div>
               </div>
 
-              <div className="mt-[70px] flex flex-col gap-10 lg:flex-row-reverse lg:items-start lg:justify-between">
-                <div className="lg:w-[509px]">
-                  <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[60px] flex flex-col gap-10 lg:flex-row-reverse lg:items-start lg:justify-between">
+                <div className="lg:w-[458px]">
+                  <h4 className="text-[20px] leading-normal sm:text-[22px]">
                     2. Conversational Filtering
                   </h4>
                   <p className="mt-3">
@@ -396,23 +396,23 @@ export default function SakuraMatchaPage() {
                     alt="A natural-language request turned into filter tags"
                     width={2268}
                     height={1152}
-                    sizes="(max-width: 1024px) 92vw, 352px"
-                    className="aspect-[352/179] w-full max-w-[352px]"
+                    sizes="(max-width: 1024px) 92vw, 317px"
+                    className="aspect-[352/179] w-full max-w-[317px]"
                   />
                   <CaseStudyShot
                     src={`${shots}/filtering-2.png`}
                     alt="Menu results matching the active filters"
                     width={2044}
                     height={1342}
-                    sizes="(max-width: 1024px) 92vw, 352px"
-                    className="aspect-[352/231] w-full max-w-[352px]"
+                    sizes="(max-width: 1024px) 92vw, 317px"
+                    className="aspect-[352/231] w-full max-w-[317px]"
                   />
                 </div>
               </div>
 
-              <div className="mt-[70px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-                <div className="lg:w-[481px]">
-                  <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[60px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+                <div className="lg:w-[433px]">
+                  <h4 className="text-[20px] leading-normal sm:text-[22px]">
                     3. Drink, Dessert &amp; Soft-Serve Pairing
                   </h4>
                   <p className="mt-3">
@@ -425,22 +425,22 @@ export default function SakuraMatchaPage() {
                     and shows the combined price of both items.
                   </p>
                 </div>
-                <div className="flex flex-col gap-5 lg:relative lg:h-[395px] lg:w-[531px] lg:shrink-0 lg:gap-0">
+                <div className="flex flex-col gap-5 lg:relative lg:h-[356px] lg:w-[478px] lg:shrink-0 lg:gap-0">
                   <CaseStudyShot
                     src={`${shots}/pairing-1.png`}
                     alt="Ask Sakura collecting the item and pairing direction"
                     width={2266}
                     height={1148}
-                    sizes="(max-width: 1024px) 92vw, 484px"
-                    className="aspect-[484/245] w-full max-w-[484px] lg:absolute lg:left-0 lg:top-0 lg:h-[245px] lg:w-[484px]"
+                    sizes="(max-width: 1024px) 92vw, 436px"
+                    className="aspect-[484/245] w-full max-w-[484px] lg:absolute lg:left-0 lg:top-0 lg:h-[221px] lg:w-[436px]"
                   />
-                  <div className="hidden lg:absolute lg:left-[89px] lg:top-[190px] lg:flex lg:h-[168px] lg:w-[136px] lg:items-center lg:justify-center">
+                  <div className="hidden lg:absolute lg:left-[80px] lg:top-[171px] lg:flex lg:h-[151px] lg:w-[122px] lg:items-center lg:justify-center">
                     <Image
                       src={`${shots}/arrow-polygon.svg`}
                       alt=""
-                      width={68}
-                      height={111}
-                      className="h-[111px] w-[68px] -rotate-[26.1deg]"
+                      width={61}
+                      height={100}
+                      className="h-[100px] w-[61px] -rotate-[26.1deg]"
                     />
                   </div>
                   <CaseStudyShot
@@ -448,23 +448,23 @@ export default function SakuraMatchaPage() {
                     alt="The paired result with its combined price"
                     width={1834}
                     height={590}
-                    sizes="(max-width: 1024px) 92vw, 397px"
-                    className="aspect-[397/128] w-full max-w-[397px] lg:absolute lg:left-[134px] lg:top-[267px] lg:h-[128px] lg:w-[397px]"
+                    sizes="(max-width: 1024px) 92vw, 357px"
+                    className="aspect-[397/128] w-full max-w-[397px] lg:absolute lg:left-[121px] lg:top-[240px] lg:h-[115px] lg:w-[357px]"
                   />
                 </div>
               </div>
 
               <BlockHeading tone="dark">
-                <span className="mt-[90px] block">
+                <span className="mt-[80px] block">
                   Guardrails &amp; Supporting Behaviors
                 </span>
               </BlockHeading>
 
-              <div className="mt-[50px]">
-                <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[44px]">
+                <h4 className="text-[20px] leading-normal sm:text-[22px]">
                   1. Allergy &amp; Dietary Safety
                 </h4>
-                <div className="mt-3 space-y-5 lg:w-[1016px]">
+                <div className="mt-3 space-y-5">
                   <p>
                     When a customer mentions an allergy or strict dietary
                     restriction, which corresponds to one of the system’s
@@ -481,31 +481,31 @@ export default function SakuraMatchaPage() {
                     cross-contact information.
                   </p>
                 </div>
-                <div className="mt-10 flex flex-col gap-9 lg:flex-row lg:items-start">
+                <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-start">
                   <CaseStudyShot
                     src={`${shots}/allergy-1.png`}
                     alt="A dietary restriction added to the active filters"
                     width={2266}
                     height={1150}
-                    sizes="(max-width: 1024px) 92vw, 469px"
-                    className="aspect-[469/238] w-full max-w-[469px]"
+                    sizes="(max-width: 1024px) 92vw, 422px"
+                    className="aspect-[469/238] w-full max-w-[422px]"
                   />
                   <CaseStudyShot
                     src={`${shots}/allergy-2.png`}
                     alt="A warning notice shown beneath an allergy-related answer"
                     width={2266}
                     height={1150}
-                    sizes="(max-width: 1024px) 92vw, 497px"
-                    className="aspect-[497/252] w-full max-w-[497px]"
+                    sizes="(max-width: 1024px) 92vw, 447px"
+                    className="aspect-[497/252] w-full max-w-[447px]"
                   />
                 </div>
               </div>
 
-              <div className="mt-[70px]">
-                <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[60px]">
+                <h4 className="text-[20px] leading-normal sm:text-[22px]">
                   2. Grounded Café Information
                 </h4>
-                <p className="mt-3 lg:w-[1016px]">
+                <p className="mt-3">
                   Ask Sakura can answer verified questions about hours,
                   location, contact details, and the café space, while avoiding
                   real-time claims such as whether the café is currently open
@@ -517,17 +517,17 @@ export default function SakuraMatchaPage() {
                     alt="Ask Sakura answering questions about the café"
                     width={2266}
                     height={1146}
-                    sizes="(max-width: 1024px) 92vw, 490px"
-                    className="aspect-[490/248] w-full max-w-[490px]"
+                    sizes="(max-width: 1024px) 92vw, 441px"
+                    className="aspect-[490/248] w-full max-w-[441px]"
                   />
                 </div>
               </div>
 
-              <div className="mt-[70px]">
-                <h4 className="text-[22px] leading-normal sm:text-[25px]">
+              <div className="mt-[60px]">
+                <h4 className="text-[20px] leading-normal sm:text-[22px]">
                   3. Interaction Support
                 </h4>
-                <div className="mt-3 lg:w-[1016px]">
+                <div className="mt-3">
                   <p>
                     Several interaction details support the overall
                     conversational experience:
@@ -552,23 +552,23 @@ export default function SakuraMatchaPage() {
                     </li>
                   </ul>
                 </div>
-                <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-[41px]">
+                <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-[37px]">
                   <div className="flex flex-col gap-[14px]">
                     <CaseStudyShot
                       src={`${shots}/interaction-1.png`}
                       alt="Suggested-prompt shortcuts on the first turn"
                       width={2268}
                       height={326}
-                      sizes="(max-width: 1024px) 92vw, 673px"
-                      className="aspect-[673/88] w-full max-w-[673px]"
+                      sizes="(max-width: 1024px) 92vw, 606px"
+                      className="aspect-[673/88] w-full max-w-[606px]"
                     />
                     <CaseStudyShot
                       src={`${shots}/interaction-2.png`}
                       alt="An error message shown after a failed request"
                       width={2266}
                       height={302}
-                      sizes="(max-width: 1024px) 92vw, 673px"
-                      className="aspect-[673/90] w-full max-w-[673px]"
+                      sizes="(max-width: 1024px) 92vw, 606px"
+                      className="aspect-[673/90] w-full max-w-[606px]"
                     />
                   </div>
                   <CaseStudyShot
@@ -576,8 +576,8 @@ export default function SakuraMatchaPage() {
                     alt="The “Sakura is thinking…” loading state"
                     width={426}
                     height={156}
-                    sizes="213px"
-                    className="aspect-[213/78] w-full max-w-[213px]"
+                    sizes="192px"
+                    className="aspect-[213/78] w-full max-w-[192px]"
                   />
                 </div>
               </div>
@@ -587,10 +587,10 @@ export default function SakuraMatchaPage() {
       </section>
 
       {/* 04 — The Final Experience */}
-      <section className="mt-[120px] lg:mt-[140px]">
+      <section className="mt-[120px]">
         <Container>
           <SectionHeading>04 - The Final Experience</SectionHeading>
-          <p className="mt-[70px] lg:w-[1178px]">
+          <p className="mt-[60px]">
             Sakura Matcha supports the customer journey from discovering the
             brand to exploring the menu, deciding what to order, and planning an
             in-store visit. Customers can browse the website independently or
@@ -603,10 +603,10 @@ export default function SakuraMatchaPage() {
             label="Screen recording walking through the Sakura Matcha MVP"
             frame="none"
             radius="panel"
-            className="mt-[30px] aspect-[1440/812] w-full"
+            className="mt-7 aspect-[1440/812] w-full"
           />
 
-          <div className="mt-[50px]">
+          <div className="mt-[44px]">
             <BlockHeading>1. Discover the Brand</BlockHeading>
             <p className="mt-3">
               The homepage introduces customers to Sakura Matcha’s story,
@@ -617,7 +617,7 @@ export default function SakuraMatchaPage() {
               Sakura Matcha distinctive, and encourage customers to explore
               further.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-[43px] lg:flex-row lg:items-start lg:justify-center">
+            <div className="mt-10 flex flex-col items-center gap-[39px] lg:flex-row lg:items-start lg:justify-center">
               <CaseStudyShot
                 src={`${shots}/final-home.png`}
                 alt="Top of the Sakura Matcha homepage"
@@ -625,8 +625,8 @@ export default function SakuraMatchaPage() {
                 height={4096}
                 frame="light"
                 align="top"
-                sizes="(max-width: 1024px) 92vw, 358px"
-                className="aspect-[358/590] w-full max-w-[358px]"
+                sizes="(max-width: 1024px) 92vw, 322px"
+                className="aspect-[358/590] w-full max-w-[322px]"
               />
               <CaseStudyShot
                 src={`${shots}/final-home.png`}
@@ -635,13 +635,13 @@ export default function SakuraMatchaPage() {
                 height={4096}
                 frame="light"
                 align="bottom"
-                sizes="(max-width: 1024px) 92vw, 354px"
-                className="aspect-[354/413] w-full max-w-[354px]"
+                sizes="(max-width: 1024px) 92vw, 319px"
+                className="aspect-[354/413] w-full max-w-[319px]"
               />
             </div>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <BlockHeading>2. Explore the Menu</BlockHeading>
             <p className="mt-3">
               Customers can browse the menu to understand what Sakura Matcha
@@ -651,7 +651,7 @@ export default function SakuraMatchaPage() {
               understand for customers with different levels of familiarity with
               matcha.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-[64px] lg:flex-row lg:items-start lg:justify-center">
+            <div className="mt-10 flex flex-col items-center gap-[58px] lg:flex-row lg:items-start lg:justify-center">
               <CaseStudyShot
                 src={`${shots}/final-menu.png`}
                 alt="Top of the Sakura Matcha menu page"
@@ -659,8 +659,8 @@ export default function SakuraMatchaPage() {
                 height={4096}
                 frame="light"
                 align="top"
-                sizes="(max-width: 1024px) 92vw, 530px"
-                className="aspect-[530/425] w-full max-w-[530px]"
+                sizes="(max-width: 1024px) 92vw, 477px"
+                className="aspect-[530/425] w-full max-w-[477px]"
               />
               <CaseStudyShot
                 src={`${shots}/final-menu.png`}
@@ -669,13 +669,13 @@ export default function SakuraMatchaPage() {
                 height={4096}
                 frame="light"
                 align="bottom"
-                sizes="(max-width: 1024px) 92vw, 431px"
-                className="aspect-[431/420] w-full max-w-[431px]"
+                sizes="(max-width: 1024px) 92vw, 388px"
+                className="aspect-[431/420] w-full max-w-[388px]"
               />
             </div>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <BlockHeading>3. Get Guidance from Ask Sakura</BlockHeading>
             <p className="mt-3">
               Customers who are unsure what to choose can use Ask Sakura for
@@ -692,13 +692,13 @@ export default function SakuraMatchaPage() {
                 width={2880}
                 height={3774}
                 frame="light"
-                sizes="(max-width: 1024px) 92vw, 523px"
-                className="aspect-[523/685] w-full max-w-[523px]"
+                sizes="(max-width: 1024px) 92vw, 471px"
+                className="aspect-[523/685] w-full max-w-[471px]"
               />
             </div>
           </div>
 
-          <div className="mt-[100px]">
+          <div className="mt-[80px]">
             <BlockHeading>4. Plan a Visit or Get in Touch</BlockHeading>
             <p className="mt-3">
               When customers are ready to visit the café, they can find
@@ -714,8 +714,8 @@ export default function SakuraMatchaPage() {
                 width={2880}
                 height={2574}
                 frame="light"
-                sizes="(max-width: 1024px) 92vw, 583px"
-                className="aspect-[583/521] w-full max-w-[583px]"
+                sizes="(max-width: 1024px) 92vw, 525px"
+                className="aspect-[583/521] w-full max-w-[525px]"
               />
             </div>
           </div>

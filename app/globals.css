@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Longest comfortable line of running text (~75 characters at 18px). */
+  --measure: 720px;
 }
 
 @theme inline {
@@ -28,9 +30,12 @@
   --radius-figma-shot: 10px;
   --radius-figma-panel: 30px;
   --radius-figma-pill: 50px;
-  --spacing-figma-artboard: 1440px;
-  --spacing-figma-content: 1200px;
-  --spacing-figma-header-top: 51px;
+  /* Layout runs at 90% of the Figma artboard (1440 -> 1296, content 1200 ->
+     1080): at Figma's 1:1 size the site reads oversized on a 1440px laptop. */
+  --spacing-figma-artboard: 1296px;
+  --spacing-figma-content: 1080px;
+  --spacing-figma-text: var(--measure);
+  --spacing-figma-header-top: 46px;
   --spacing-figma-panel-top: 198px;
 }
 
@@ -38,6 +43,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-instrument-sans), Arial, Helvetica, sans-serif;
+}
+
+/* In the base layer so any width utility on a paragraph still wins. */
+@layer base {
+  p {
+    max-width: var(--measure);
+  }
 }
 
 .sakura-petals-layer {
