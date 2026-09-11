@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Longest comfortable line of running text (~75 characters at 18px). */
-  --measure: 720px;
+  /* Widest single-column paragraph: about 97 characters per line at 18px. */
+  --measure: 800px;
 }
 
 @theme inline {

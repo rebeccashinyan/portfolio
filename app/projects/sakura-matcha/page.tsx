@@ -116,7 +116,7 @@ function Exhibit({
 
 export default function SakuraMatchaPage() {
   return (
-    <main className="isolate min-h-screen w-full overflow-x-hidden bg-sakura-ink pb-[120px] pt-8 text-[17px] leading-normal text-white sm:text-[18px] lg:pt-figma-header-top">
+    <main className="isolate min-h-screen w-full overflow-x-hidden bg-sakura-ink pb-[120px] pt-8 text-[17px] leading-[1.6] text-white sm:text-[18px] lg:pt-figma-header-top">
       <SakuraPetals />
 
       <Container>

@@ -229,7 +229,7 @@ function Stage({
 
 export default function GoalMountainPage() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-goal-mist pb-[120px] pt-8 text-[17px] leading-normal text-black sm:text-[18px] lg:pt-figma-header-top">
+    <main className="min-h-screen w-full overflow-x-hidden bg-goal-mist pb-[120px] pt-8 text-[17px] leading-[1.6] text-black sm:text-[18px] lg:pt-figma-header-top">
       <Container>
         <SiteHeader />
       </Container>
