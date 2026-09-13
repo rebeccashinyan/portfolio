@@ -24,9 +24,9 @@ const coverFrame =
 const projects: Project[] = [
   {
     title: "Goal Mountain",
-    discipline: "AI Product Design / Agentic UX / Web App",
+    discipline: "AI Product Design / Agentic UX",
     description:
-      "An AI-powered goal achievement platform that turns long-term goals into adaptive mountain journeys.",
+      "An AI goal-planning web app that turns long-term ambitions into structured routes, then adapts weekly plans based on progress and learned user patterns.",
     href: "/projects/goal-mountain",
     cover: {
       src: "/figma-assets/goal-mountain/cover.png",
@@ -39,9 +39,9 @@ const projects: Project[] = [
   },
   {
     title: "Sakura Matcha",
-    discipline: "Visual Design / Responsive Web / Customer Experience",
+    discipline: "Responsive Web Design / AI Interaction",
     description:
-      "A responsive website for a modern matcha brand, designed around warm visuals, menu discovery, and a simple customer journey.",
+      "A matcha café website designed to build strong brand recognition and enhance the overall customer experience through thoughtful UI/UX and an AI assistant.",
     href: "/projects/sakura-matcha",
     cover: {
       src: "/figma-assets/sakura-matcha/cover.png",

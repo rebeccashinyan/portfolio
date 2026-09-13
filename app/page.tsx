@@ -9,8 +9,8 @@ export default function Home() {
         id="about"
         title="Hi, I'm Rebecca."
         paragraphs={[
-          "I'm an undergraduate at New York University, majoring in Data Science and minoring in Integrated Design and Media.",
-          "I'm interested in product design, UI/UX, and creating digital experiences at the intersection of design, technology, and human-centered problem solving.",
+          "I'm a junior at New York University, majoring in Data Science and minoring in Integrated Design and Media.",
+          "I'm interested in product design and UI/UX, using both design thinking and data analysis to create thoughtful digital experiences.",
         ]}
         illustration={{
           src: "/figma-assets/about-illustration.png",

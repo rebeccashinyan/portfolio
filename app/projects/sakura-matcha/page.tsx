@@ -10,7 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Sakura Matcha — Rebecca Wang",
   description:
-    "Designing a brand-driven matcha café website with AI-supported menu decisions.",
+    "A matcha café website designed to build strong brand recognition and enhance the overall customer experience through thoughtful UI/UX and an AI assistant.",
 };
 
 const shots = "/figma-assets/sakura-matcha";
@@ -130,14 +130,10 @@ export default function SakuraMatchaPage() {
         />
         <div className="relative mx-auto h-full w-full max-w-figma-artboard px-5 py-16 sm:px-8 lg:px-0 lg:py-0">
           <div className="lg:absolute lg:left-[108px] lg:top-[264px] lg:w-[698px]">
-            <p className="text-[16px] leading-normal">
-              SAKURA MATCHA · WEB &amp; AI EXPERIENCE
-            </p>
-            <h1 className="mt-5 max-w-[698px] text-[28px] font-normal leading-tight sm:text-[32px]">
-              Designing a brand-driven matcha café website with AI-supported
-              menu decisions
+            <h1 className="font-display text-[44px] font-normal leading-normal sm:text-[60px]">
+              Sakura Matcha
             </h1>
-            <p className="mt-7 max-w-[548px] text-[16px] leading-normal">
+            <p className="max-w-[696px] text-[19px] leading-normal sm:text-[22px]">
               A matcha café website designed to build strong brand recognition
               and enhance the overall customer experience through thoughtful
               UI/UX and an AI assistant.
@@ -307,7 +303,7 @@ export default function SakuraMatchaPage() {
                     className="aspect-[783/399] w-full max-w-[705px]"
                   />
                 </Exhibit>
-                <Exhibit caption="Brand-heavy dark aesthetic V.S. Menu readability and scannability">
+                <Exhibit caption="Brand-heavy dark aesthetic vs. Menu readability and scannability">
                   <CaseStudyShot
                     src={`${shots}/menu-readability.png`}
                     alt="Dark brand-led menu layout compared with a more readable menu layout"
