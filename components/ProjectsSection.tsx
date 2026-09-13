@@ -8,7 +8,14 @@ type Project = {
   /** Case-study page, when one exists. */
   href?: string;
   /** Cover image; projects without one show the gold placeholder. */
-  cover?: { src: string; alt: string; width: number; height: number };
+  cover?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    /** Crop focus for the portrait cover inside the squarer frame. */
+    position: string;
+  };
 };
 
 const coverFrame =
@@ -26,6 +33,8 @@ const projects: Project[] = [
       alt: "Goal Mountain web app on a laptop, showing a goal path up a mountain",
       width: 1024,
       height: 1536,
+      // Flag logo keeps headroom; the whole laptop stays in frame.
+      position: "object-[50%_15%]",
     },
   },
   {
@@ -34,6 +43,14 @@ const projects: Project[] = [
     description:
       "A responsive website for a modern matcha brand, designed around warm visuals, menu discovery, and a simple customer journey.",
     href: "/projects/sakura-matcha",
+    cover: {
+      src: "/figma-assets/sakura-matcha/cover.png",
+      alt: "Sakura Matcha website on a laptop and phone, showing matcha drinks and desserts",
+      width: 887,
+      height: 1404,
+      // Squarer small-screen frames keep the logo's headroom and let the devices run off the bottom; desktop fits the whole scene.
+      position: "object-[50%_15%] lg:object-[50%_35%]",
+    },
   },
 ];
 
@@ -47,14 +64,13 @@ function ProjectCard({ project }: { project: Project }) {
       }`}
     >
       {project.cover ? (
-        // Portrait cover in a squarer frame: crop point sits high so the logo keeps headroom and the laptop stays whole.
         <Image
           src={project.cover.src}
           alt={project.cover.alt}
           width={project.cover.width}
           height={project.cover.height}
           sizes="(min-width: 640px) 232px, 100vw"
-          className={`${coverFrame} object-cover object-[50%_15%]`}
+          className={`${coverFrame} object-cover ${project.cover.position}`}
         />
       ) : (
         <div className={`${coverFrame} bg-portfolio-gold`} />

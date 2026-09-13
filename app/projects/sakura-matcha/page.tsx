@@ -17,10 +17,10 @@ const shots = "/figma-assets/sakura-matcha";
 
 const overviewFacts = [
   "Project Type: Self-initiated MVP",
-  "Role: Product Designer / UI/UX Designer / Frontend Developer / Brand Designer",
+  "Role: Product Design / UI/UX Design / Brand Design / AI Interaction Design / Frontend Development",
   "Timeline: May–June 2026",
   "Platform: Responsive web",
-  "Tools: Figma, React, Next.js, TypeScript, Tailwind CSS, OpenAI API",
+  "Tools: Figma, React, Next.js, TypeScript, Tailwind CSS, OpenAI API, Claude Code",
   "Team: Independent project",
   "Status: Functional MVP",
 ];
@@ -29,28 +29,23 @@ const problems = [
   {
     title: "1. Standing Out in a Crowded Market",
     points: [
-      "Growing number of modern matcha and specialty café brands",
-      "Limited differentiation through products alone",
-      "Need for a recognizable and memorable brand identity",
-      "Stronger connection between brand personality and customer perception",
+      "Limited differentiation through products alone in a growing matcha and specialty café market",
+      "Difficulty creating a distinctive brand presence that customers can recognize and remember",
     ],
   },
   {
     title: "2. Turning the Brand into an Effective Digital Experience",
     points: [
-      "Visually attractive experience without sacrificing usability",
-      "Clear navigation and information hierarchy",
-      "Easy-to-browse menu across desktop and mobile",
-      "Consistent brand expression throughout the website",
+      "Balancing strong visual expression with usability",
+      "Making menu content easy to browse and understand across desktop and mobile",
+      "Maintaining a consistent brand experience throughout the website",
     ],
   },
   {
     title: "3. Supporting Customers in Making Menu Choices",
     points: [
-      "Different levels of familiarity with matcha",
-      "Difficulty understanding menu items, flavors, and ingredients",
-      "Personal preferences not easily translated into a specific drink",
-      "Need for contextual guidance during menu exploration",
+      "Different levels of familiarity with matcha can make menu items, flavors, and ingredients difficult to understand",
+      "Customers may know what they like but struggle to translate those preferences into a specific menu choice",
     ],
   },
 ];
@@ -143,9 +138,9 @@ export default function SakuraMatchaPage() {
               menu decisions
             </h1>
             <p className="mt-7 max-w-[548px] text-[16px] leading-normal">
-              A responsive web experience that combines a distinctive brand
-              identity, intuitive digital experience, and Ask Sakura, which is a
-              grounded AI assistant that helps customers decide what to order.
+              A matcha café website designed to build strong brand recognition
+              and enhance the overall customer experience through thoughtful
+              UI/UX and an AI assistant.
             </p>
           </div>
 
@@ -188,7 +183,6 @@ export default function SakuraMatchaPage() {
           <SectionHeading>01 - Overview</SectionHeading>
           <div className="mt-[60px] grid gap-10 lg:grid-cols-2 lg:gap-x-[170px]">
             <div>
-              <p>Sakura Matcha is a self-created matcha brand.</p>
               <p>
                 This project focuses on building a brand-driven café website
                 designed to attract customers and enhance the overall customer
@@ -211,7 +205,7 @@ export default function SakuraMatchaPage() {
         <Container>
           <SectionHeading>02 - The Problem</SectionHeading>
           <div className="mt-[60px] max-w-figma-text">
-            <p>There are three challenges I work on for Sakura Matcha:</p>
+            <p>There are three key challenges I addressed in Sakura Matcha:</p>
             <div className="mt-10 space-y-10">
               {problems.map((problem) => (
                 <div key={problem.title}>
@@ -240,10 +234,10 @@ export default function SakuraMatchaPage() {
               1. Building a Recognizable Brand Identity
             </BlockHeading>
             <p className="mt-3">
-              Sakura was selected as the central visual motif and became the
-              basis for the name “Sakura Matcha,” giving the brand a distinctive
-              element that could be carried consistently across different
-              touchpoints. By combining references to traditional Japanese tea
+              Sakura blossoms were selected as the central visual motif and
+              became the basis for the name “Sakura Matcha,” giving the brand a
+              distinctive element that could be carried consistently across
+              different touchpoints. By combining references to traditional Japanese tea
               houses with the contemporary character of New York, the visual
               direction balances cultural warmth with a modern, refined
               presence. The color palette and supporting visual elements draw
@@ -262,7 +256,7 @@ export default function SakuraMatchaPage() {
                     className="aspect-[515/299] w-full max-w-[464px]"
                   />
                 </Exhibit>
-                <Exhibit caption="Final selected palette / Final Color System">
+                <Exhibit caption="Final color system">
                   <CaseStudyShot
                     src={`${shots}/palette.png`}
                     alt="Final color system swatches"
@@ -303,17 +297,17 @@ export default function SakuraMatchaPage() {
             </p>
             <Panel>
               <div className="space-y-14">
-                <Exhibit caption="Separate page (wireframe) → Integrated homepage experience (Final Figma Design) Comparison">
+                <Exhibit caption="Separate About page (wireframe) → Integrated homepage experience (final design)">
                   <CaseStudyShot
                     src={`${shots}/wireframe-comparison.png`}
-                    alt="Wireframe of a separate page next to the integrated homepage design"
+                    alt="Wireframe of a separate About page next to the integrated homepage design"
                     width={2168}
                     height={1106}
                     sizes="(max-width: 1024px) 92vw, 705px"
                     className="aspect-[783/399] w-full max-w-[705px]"
                   />
                 </Exhibit>
-                <Exhibit caption="Brand-heavy dark aesthetic vs menu information readability / scannability">
+                <Exhibit caption="Brand-heavy dark aesthetic V.S. Menu readability and scannability">
                   <CaseStudyShot
                     src={`${shots}/menu-readability.png`}
                     alt="Dark brand-led menu layout compared with a more readable menu layout"
@@ -332,7 +326,7 @@ export default function SakuraMatchaPage() {
               3. Supporting Menu Decisions with an AI Assistant
             </BlockHeading>
             <p className="mt-3">
-              Ask Sakura is Sakura Matcha’s AI assistant, built to help
+              Ask Sakura is Sakura Matcha’s AI assistant, designed to help
               customers who may be unfamiliar with matcha or uncertain about
               what to order.
             </p>
@@ -413,7 +407,7 @@ export default function SakuraMatchaPage() {
               <div className="mt-[60px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
                 <div className="lg:w-[433px]">
                   <h4 className="text-[20px] leading-normal sm:text-[22px]">
-                    3. Drink, Dessert &amp; Soft-Serve Pairing
+                    3. Drink, Dessert &amp; Soft Serve Pairing
                   </h4>
                   <p className="mt-3">
                     Customers who have already selected an item can ask Ask
@@ -466,9 +460,8 @@ export default function SakuraMatchaPage() {
                 </h4>
                 <div className="mt-3 space-y-5">
                   <p>
-                    When a customer mentions an allergy or strict dietary
-                    restriction, which corresponds to one of the system’s
-                    existing structured conditions—dairy-free, vegan, or
+                    When a customer mentions a dietary restriction covered by
+                    the system’s structured filters—dairy-free, vegan, or
                     gluten-free—the assistant recommends only items that meet
                     that condition. The corresponding restriction is also
                     automatically added to the Active Filter Panel, and a
@@ -506,10 +499,10 @@ export default function SakuraMatchaPage() {
                   2. Grounded Café Information
                 </h4>
                 <p className="mt-3">
-                  Ask Sakura can answer verified questions about hours,
+                  Ask Sakura can answer verified questions about opening hours,
                   location, contact details, and the café space, while avoiding
-                  real-time claims such as whether the café is currently open
-                  that it cannot verify.
+                  real-time claims it cannot verify, such as whether the café is
+                  currently open.
                 </p>
                 <div className="mt-10">
                   <CaseStudyShot
