@@ -233,12 +233,12 @@ export default function SakuraMatchaPage() {
               Sakura blossoms were selected as the central visual motif and
               became the basis for the name “Sakura Matcha,” giving the brand a
               distinctive element that could be carried consistently across
-              different touchpoints. By combining references to traditional Japanese tea
-              houses with the contemporary character of New York, the visual
-              direction balances cultural warmth with a modern, refined
-              presence. The color palette and supporting visual elements draw
-              directly from matcha and sakura, creating an atmosphere that feels
-              calm, soft, and premium.
+              different touchpoints. By combining references to traditional
+              Japanese tea houses with the contemporary character of New York,
+              the visual direction balances cultural warmth with a modern,
+              refined presence. The color palette and supporting visual elements
+              draw directly from matcha and sakura, creating an atmosphere that
+              feels calm, soft, and premium.
             </p>
             <Panel>
               <div className="space-y-14">
@@ -289,7 +289,7 @@ export default function SakuraMatchaPage() {
               the typography, imagery, colors, and decorative elements maintain
               a distinctive visual identity across the experience. This balance
               allows the website to feel visually expressive while remaining
-              clear, accessible, and easy to use.
+              clear and easy to use.
             </p>
             <Panel>
               <div className="space-y-14">
