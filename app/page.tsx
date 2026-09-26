@@ -18,6 +18,12 @@ export default function Home() {
           height: 941,
           alt: "Black line illustration of Rebecca surrounded by design, data, and digital experience sketches.",
         }}
+        portrait={{
+          src: "/figma-assets/about-portrait.jpg",
+          width: 571,
+          height: 856,
+          alt: "Portrait of Rebecca Wang.",
+        }}
       />
     </main>
   );

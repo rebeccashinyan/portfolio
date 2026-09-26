@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type Illustration = {
+type ImageAsset = {
   src: string;
   width: number;
   height: number;
@@ -11,7 +11,8 @@ type AboutSectionProps = {
   id: string;
   title: string;
   paragraphs: string[];
-  illustration: Illustration;
+  illustration: ImageAsset;
+  portrait: ImageAsset;
 };
 
 export function AboutSection({
@@ -19,6 +20,7 @@ export function AboutSection({
   title,
   paragraphs,
   illustration,
+  portrait,
 }: AboutSectionProps) {
   return (
     <section
@@ -36,7 +38,16 @@ export function AboutSection({
       </div>
 
       <div className="relative mx-auto mt-12 aspect-[941/490] w-full max-w-[847px] overflow-hidden lg:mt-14">
-        <div className="absolute left-[42%] top-[24.7%] h-[44.1%] w-[17.2%] rounded-figma-panel bg-portfolio-periwinkle" />
+        <div className="absolute left-[42%] top-[24.7%] z-20 h-[44.1%] w-[17.2%] overflow-hidden rounded-figma-panel bg-portfolio-periwinkle">
+          <Image
+            src={portrait.src}
+            alt={portrait.alt}
+            width={portrait.width}
+            height={portrait.height}
+            priority
+            className="h-full w-full object-cover"
+          />
+        </div>
         <Image
           src={illustration.src}
           alt={illustration.alt}
