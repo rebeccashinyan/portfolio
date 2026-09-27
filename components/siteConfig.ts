@@ -2,12 +2,6 @@ import type { SocialIconName } from "@/components/SocialIcon";
 
 export const brandName = "Rebecca Wang";
 
-export const logo = {
-  src: "/figma-assets/logo-dot.svg",
-  width: 72,
-  height: 69,
-};
-
 export const navItems = [
   { label: "About", href: "/" },
   { label: "Projects", href: "/projects" },
