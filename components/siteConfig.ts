@@ -14,17 +14,17 @@ export const socialLinks: {
 }[] = [
   {
     label: "LinkedIn profile",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/rebecca-wang-b7233b307/",
     icon: "linkedin",
   },
   {
     label: "Email Rebecca",
-    href: "mailto:sw6543@nyu.edu",
+    href: "mailto:rebeccashinyan@gmail.com",
     icon: "mail",
   },
   {
     label: "GitHub profile",
-    href: "https://github.com/",
+    href: "https://github.com/rebeccashinyan",
     icon: "github",
   },
 ];

@@ -27,20 +27,28 @@ export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
       <SiteNav activeHref={activeHref} />
 
       <div className="flex items-center gap-[6px]">
-        {socialLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            aria-label={link.label}
-            className={`flex size-[39px] items-center justify-center rounded-figma-sm bg-black text-white focus-visible:outline-2 focus-visible:outline-offset-4 ${
-              tone === "light"
-                ? "focus-visible:outline-white"
-                : "focus-visible:outline-portfolio-navy"
-            }`}
-          >
-            <SocialIcon name={link.icon} />
-          </a>
-        ))}
+        {socialLinks.map((link) => {
+          // The mail link hands off to the visitor's mail app; the profiles
+          // open in a new tab so the portfolio stays put behind them.
+          const opensNewTab = link.href.startsWith("http");
+
+          return (
+            <a
+              key={link.label}
+              href={link.href}
+              aria-label={link.label}
+              target={opensNewTab ? "_blank" : undefined}
+              rel={opensNewTab ? "noopener noreferrer" : undefined}
+              className={`flex size-[39px] items-center justify-center rounded-figma-sm bg-black text-white focus-visible:outline-2 focus-visible:outline-offset-4 ${
+                tone === "light"
+                  ? "focus-visible:outline-white"
+                  : "focus-visible:outline-portfolio-navy"
+              }`}
+            >
+              <SocialIcon name={link.icon} />
+            </a>
+          );
+        })}
       </div>
     </header>
   );
