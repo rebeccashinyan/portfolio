@@ -16,7 +16,7 @@ export function SiteHeader({ activeHref, tone = "dark" }: SiteHeaderProps) {
     <header className="relative mx-auto flex w-[calc(100vw-40px)] max-w-figma-content flex-col items-start gap-4 sm:w-full sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-5 lg:h-[62px] lg:flex-nowrap">
       <Link href="/">
         <span
-          className={`font-display text-[26px] font-normal leading-none ${
+          className={`font-brand text-[26px] font-normal leading-none ${
             tone === "light" ? "text-white" : "text-black"
           }`}
         >

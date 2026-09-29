@@ -27,7 +27,7 @@ export function AboutSection({
       id={id}
       className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content overflow-hidden rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
     >
-      <h1 className="font-display text-[42px] font-normal leading-none text-portfolio-navy sm:text-[56px]">
+      <h1 className="font-brand text-[42px] font-normal leading-none text-portfolio-navy sm:text-[56px]">
         {title}
       </h1>
 
