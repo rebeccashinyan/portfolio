@@ -11,7 +11,6 @@ type AboutSectionProps = {
   id: string;
   title: string;
   paragraphs: string[];
-  illustration: ImageAsset;
   portrait: ImageAsset;
 };
 
@@ -19,48 +18,40 @@ export function AboutSection({
   id,
   title,
   paragraphs,
-  illustration,
   portrait,
 }: AboutSectionProps) {
   return (
     <section
       id={id}
-      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content overflow-hidden rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
+      className="mx-auto mt-14 w-[calc(100vw-40px)] max-w-figma-content rounded-figma-panel bg-portfolio-paper px-6 py-10 sm:w-full sm:px-10 lg:mt-[72px] lg:p-14"
     >
-      <h1 className="font-brand text-[42px] font-normal leading-none text-portfolio-navy sm:text-[56px]">
-        {title}
-      </h1>
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+        <div className="lg:max-w-[470px]">
+          <h1 className="font-brand text-[36px] font-normal leading-none text-portfolio-navy sm:text-[44px]">
+            {title}
+          </h1>
 
-      <div className="mt-7 space-y-5 break-words text-[17px] font-bold leading-[1.6] sm:text-[18px] lg:mt-9">
-        {paragraphs.map((paragraph) => (
-          // The intro runs the full width of the panel rather than the site's
-          // 800px measure, so the first paragraph holds one line instead of
-          // dropping two words onto a second.
-          <p key={paragraph} className="max-w-none text-pretty">
-            {paragraph}
-          </p>
-        ))}
-      </div>
+          <div className="mt-8 space-y-5 break-words text-[17px] font-bold leading-[1.6] sm:text-[18px] lg:mt-12">
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph} className="max-w-none text-pretty">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
 
-      <div className="relative mx-auto mt-12 aspect-[941/490] w-full max-w-[847px] overflow-hidden lg:mt-14">
-        <div className="absolute left-[42%] top-[24.7%] z-20 h-[44.1%] w-[17.2%] overflow-hidden rounded-figma-panel bg-portfolio-periwinkle">
+        {/* Centred in the space beside the text rather than pushed against the
+            panel's padding, which is where the design places it. */}
+        <div className="lg:flex lg:flex-1 lg:justify-center">
           <Image
             src={portrait.src}
             alt={portrait.alt}
             width={portrait.width}
             height={portrait.height}
             priority
-            className="h-full w-full object-cover"
+            className="w-[214px] shrink-0 rounded-figma-shot"
           />
         </div>
-        <Image
-          src={illustration.src}
-          alt={illustration.alt}
-          width={illustration.width}
-          height={illustration.height}
-          priority
-          className="absolute left-0 top-0 z-10 h-[108.04%] w-full max-w-none object-fill"
-        />
       </div>
     </section>
   );
