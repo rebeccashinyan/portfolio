@@ -115,6 +115,14 @@ function Panel({
   );
 }
 
+function ShotCaption({ children }: { children: ReactNode }) {
+  return (
+    <figcaption className="mt-4 text-center text-[15px] font-bold sm:text-[16px]">
+      {children}
+    </figcaption>
+  );
+}
+
 function Finding({
   evidence,
   implication,
@@ -561,7 +569,7 @@ export default function GoalMountainPage() {
                   about information that was useful but not always necessary
                   before generation.
                 </p>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/intake-early.png`}
                     alt="Early intake conversation with many follow-up questions"
@@ -571,7 +579,8 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 589px"
                     className="aspect-[654/528] w-full max-w-[589px]"
                   />
-                </div>
+                  <ShotCaption>Before</ShotCaption>
+                </figure>
                 <p className="mx-auto mt-10">
                   I shifted the intake from collecting maximum context to
                   identifying minimum viable understanding. Before asking
@@ -579,7 +588,7 @@ export default function GoalMountainPage() {
                   would materially change the milestones, sequencing, pacing,
                   feasibility, or a critical constraint.
                 </p>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/intake-current.png`}
                     alt="Current intake conversation with fewer, higher-value turns"
@@ -589,7 +598,8 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 471px"
                     className="aspect-[523/502] w-full max-w-[471px]"
                   />
-                </div>
+                  <ShotCaption>After</ShotCaption>
+                </figure>
                 <div className="mx-auto mt-10 max-w-figma-text space-y-2">
                   <p>
                     The current flow prioritizes roughly 3–4 high-value
@@ -618,7 +628,7 @@ export default function GoalMountainPage() {
                   correction path was Discuss with AI—even for simple changes
                   such as moving or shortening one task.
                 </p>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/plan-discuss.png`}
                     alt="Weekly plan where Discuss with AI is the main correction path"
@@ -628,12 +638,13 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 700px"
                     className="aspect-[778/562] w-full max-w-[700px]"
                   />
-                </div>
+                  <ShotCaption>Before</ShotCaption>
+                </figure>
                 <p className="mx-auto mt-10">
                   I realized that conversation should be an escalation path, not
                   the default interface for every AI-assisted action.
                 </p>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/plan-controls.png`}
                     alt="Draft plan with direct task controls and plan-level steering"
@@ -643,7 +654,8 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 698px"
                     className="aspect-[776/630] w-full max-w-[698px]"
                   />
-                </div>
+                  <ShotCaption>After</ShotCaption>
+                </figure>
                 <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     Every weekly plan now begins as a Draft. Users can review
@@ -688,7 +700,7 @@ export default function GoalMountainPage() {
                   reality, but an AI that continuously rewrites user commitments
                   can quickly become unpredictable.
                 </p>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/proposed-revisions.png`}
                     alt="Proposed revisions shown against the current schedule"
@@ -698,7 +710,8 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 702px"
                     className="aspect-[780/720] w-full max-w-[702px]"
                   />
-                </div>
+                  <ShotCaption>Before</ShotCaption>
+                </figure>
                 <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     Meaningful AI-generated plan changes therefore become
@@ -716,7 +729,7 @@ export default function GoalMountainPage() {
                     risked turning the product into a timesheet.
                   </p>
                 </div>
-                <div className="mt-10 flex justify-center">
+                <figure className="mt-10 flex flex-col items-center">
                   <CaseStudyShot
                     src={`${shots}/checkin-signals.png`}
                     alt="Daily check-in signals feeding reflection and long-term memory"
@@ -726,7 +739,8 @@ export default function GoalMountainPage() {
                     sizes="(max-width: 1024px) 92vw, 653px"
                     className="aspect-[725/636] w-full max-w-[653px]"
                   />
-                </div>
+                  <ShotCaption>After</ShotCaption>
+                </figure>
                 <div className="mx-auto mt-10 max-w-figma-text space-y-6">
                   <p>
                     These signals feed automatic reflection and long-term

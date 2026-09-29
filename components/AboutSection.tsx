@@ -31,9 +31,14 @@ export function AboutSection({
         {title}
       </h1>
 
-      <div className="mt-7 max-w-figma-text space-y-5 break-words text-[17px] font-bold leading-[1.6] sm:text-[18px] lg:mt-9">
+      <div className="mt-7 space-y-5 break-words text-[17px] font-bold leading-[1.6] sm:text-[18px] lg:mt-9">
         {paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          // The intro runs the full width of the panel rather than the site's
+          // 800px measure, so the first paragraph holds one line instead of
+          // dropping two words onto a second.
+          <p key={paragraph} className="max-w-none text-pretty">
+            {paragraph}
+          </p>
         ))}
       </div>
 
